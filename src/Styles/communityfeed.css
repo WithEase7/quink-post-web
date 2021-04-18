@@ -1,0 +1,215 @@
+.communityfeed-container {
+  width: 78vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 22vw;
+  /* border: 2px solid red; */
+  /* background-color: #3f4f61; */
+  background-color: #f1f1f1;
+  padding: 12px;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+.community-upper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 2px solid red; */
+}
+.community-pagetitle {
+  font-size: 31px;
+  font-family: "Montserrat", sans-serif;
+  padding: 12px;
+}
+.create-community {
+  font-family: "Montserrat", sans-serif;
+  /* border: 2px solid black; */
+  margin: 0px 12px;
+}
+.createcommunity-button {
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  padding: 12px 23px;
+  background-color: #0095f6;
+  font-weight: 700;
+  color: rgb(231, 231, 231);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.community-secondary-container {
+  /* border: 2px solid red; */
+  height: 88vh;
+  margin-top: 1vh;
+  display: flex;
+  flex-direction: row;
+}
+.community-feed {
+  /* border: 2px solid blue; */
+  height: 100%;
+  width: 69%;
+  overflow-y: scroll;
+}
+/* width */
+.community-feed::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.community-feed::-webkit-scrollbar-track {
+  background: #f1f1f1ab;
+}
+
+/* Handle */
+.community-feed::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.808);
+  border-radius: 12px;
+  opacity: 0.6;
+}
+
+/* Handle on hover */
+.community-feed::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.createcommunity {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #3f4f61;
+  color: #f1f1f1;
+  overflow-y: hidden;
+  font-size: 19px;
+  font-weight: 500;
+}
+.createcommunityback {
+  border: 2px solid transparent;
+  background-color: #0095f6;
+  padding: 12px 17px;
+  border-radius: 12px;
+  margin: 9px;
+}
+.show-createcommunity {
+  display: none;
+}
+.createcommunityback:hover {
+  border: 2px solid white;
+}
+.community-searchbox {
+  width: 80%;
+  /* border: 2px solid red; */
+  margin: 5% 25px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+
+  flex-direction: row;
+  border-radius: 12px;
+  /* background-color: #2b4c7425; */
+  background-color: #0094f61f;
+  height: 8%;
+  box-sizing: border-box;
+}
+.community-search-icon {
+  height: 17px;
+  width: 18px;
+  padding-top: 4px;
+}
+.community-search-input {
+  /* padding: 4px; */
+  margin-left: 12px;
+  background-color: transparent;
+  border: none;
+  /* border: 2px solid black; */
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+.joined-communities {
+  /* border: 2px solid red; */
+  height: 87%;
+}
+.joined-communities-header {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+}
+.joined-communities-body {
+  height: 90%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+.each-joined-community {
+  height: 12%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.342);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.each-joined-community-avatar {
+  padding: 0px 3px;
+}
+.each-joined-community-info {
+  padding-left: 16px;
+}
+.each-joined-community-info-1 {
+  font-weight: 700;
+}
+.each-joined-community-info-2 {
+  color: grey;
+}
+@media screen and (max-width: 1300px) {
+  .communityfeed-container {
+    width: 100vw;
+    height: 85vh;
+    position: absolute;
+    top: 15vh;
+    left: 0vw;
+    box-sizing: border-box;
+    padding: 0px;
+    /* border: 2px solid red; */
+  }
+  .create-community {
+    display: none;
+  }
+  .community-upper {
+    /* border: 2px solid red; */
+    height: 7vh;
+  }
+  .community-pagetitle {
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+    padding: 12px;
+  }
+  .community-secondary-container {
+    width: 100vw;
+    height: 78vh;
+    /* border: 2px solid red; */
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  .community-feed {
+    width: 100%;
+    padding: 0px;
+  }
+  .community-feed::-webkit-scrollbar {
+    display: none;
+  }
+}
