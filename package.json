@@ -1,7 +1,7 @@
 {
   "name": "quinkpost",
   "version": "0.1.0",
-  "homepage": "http://quinkpost.com/",
+  "homepage": "http://quinkpost.com",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.3",
