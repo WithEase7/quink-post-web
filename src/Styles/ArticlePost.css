@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+.articlepost {
+  width: 90%;
+  height: 50%;
+  margin: 26px auto;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+  /* border-bottom: 1px solid black; */
+}
+.articlepost-img {
+  /* height: 100%; */
+  width: 30vw;
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.articlepost-img > img {
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  border-radius: 16px;
+  vertical-align: center;
+}
+.articlepost-info {
+  height: 100%;
+  width: 55%;
+  align-items: center;
+  /* border: 2px solid red; */
+  display: flex;
+  /* align-items: flex-start; */
+  /* justify-content: center; */
+}
+.articlepost-header {
+  padding: 14px 4px;
+  margin: 8px;
+  font-size: 24px;
+  border-bottom: 2px solid black;
+  font-family: "Rubik", sans-serif;
+}
+.articlepost-caption {
+  padding: 14px 4px;
+  margin: 8px;
+  font-family: "Rubik", sans-serif;
+  font-size: 17px;
+}
+@media screen and (min-width: 1565px) {
+}
+@media screen and (max-width: 1455px) {
+  .articlepost {
+    height: auto;
+  }
+  .articlepost-img {
+    /* padding: 22px 2px; */
+    height: 30vh;
+    width: 50vw;
+    /* max-width: 45%; */
+    /* border: 2px solid red; */
+  }
+  .articlepost-info {
+    /* overflow-y: scroll; */
+    height: auto;
+  }
+  .articlepost-header {
+    padding: 8px 3px;
+    margin: 6px;
+    font-size: 17px;
+    border-bottom: 2px solid black;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+  }
+  .articlepost-caption {
+    padding: 6px 4px;
+    margin: 4px;
+    font-family: "Rubik", sans-serif;
+    font-size: 13px;
+  }
+  .articlepost-img > img {
+    max-width: 100%;
+    max-height: 100%;
+    /* border: 2px solid red; */
+    border-radius: 16px;
+    vertical-align: center;
+  }
+}
+@media screen and (max-width: 555px) {
+  .articlepost {
+    flex-direction: column;
+    height: auto;
+    /* border: 2px solid red; */
+    border-bottom: 1px solid rgb(196, 196, 196);
+  }
+  .articlepost-img {
+    /* padding: 22px 2px; */
+    /* height: 100%; */
+    width: auto;
+    max-width: 98%;
+    /* border: 2px solid red; */
+  }
+  .articlepost-info {
+    height: 100%;
+    width: 100% !important;
+  }
+}

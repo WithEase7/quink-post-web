@@ -1,0 +1,327 @@
+.profile-container {
+  width: 66vw;
+  height: 100vh;
+  border-left: 1px solid rgba(128, 128, 128, 0.192);
+  border-right: 1px solid rgba(128, 128, 128, 0.192);
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  /* overflow-y: scroll; */
+}
+.profile-container-upper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.192);
+}
+.profile-container-upper-heading {
+  font-size: 23px;
+  font-family: "Montserrat", sans-serif;
+  padding: 7px;
+}
+.profile-container-upper-homeicon {
+  padding: 7px;
+  /* border: 2px solid red; */
+}
+.iconbutton-profile {
+  color: black;
+}
+.iconbutton-profile:hover {
+  color: #0095f6;
+}
+.profile-container-infobox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 29vh;
+}
+.profile-profile-image {
+  width: 34%;
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 14px;
+  padding-top: 8px;
+  box-sizing: border-box;
+  height: 29vh;
+}
+.profile-profile-image-img {
+  height: 180px;
+  width: 180px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.profile-profile-info {
+  width: 66%;
+  /* border: 1px solid blue; */
+  box-sizing: border-box;
+  height: 100%;
+}
+.profile-profile-names {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.editprofile {
+  margin-right: 23px;
+  color: #0095f6;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-profile-displayname {
+  font-size: 21px;
+  margin: 0.6px;
+  padding-top: 14px;
+  padding-left: 7px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+}
+.profile-profile-username {
+  color: rgb(138, 138, 138);
+  font-size: 15px;
+  padding-left: 7px;
+  padding-top: 3px;
+  font-family: "Nunito", sans-serif;
+}
+.profile-detail-profile {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.profile-detail-each-profile {
+  font-size: 16px;
+  margin: 0.6px;
+  padding: 0.4px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+}
+.number-profile {
+  font-size: 19px;
+  margin: 0.6px;
+  margin-top: 5px;
+  padding: 0.4px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+}
+.edit-link {
+  text-decoration: none;
+}
+.profile-bio {
+  font-size: 18px;
+  margin: 0.6px;
+  padding-top: 6px;
+  padding-left: 7px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+}
+.profile-bio-detail {
+  font-size: 16px;
+  margin: 0.6px;
+  padding-top: 6px;
+  padding-left: 7px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+}
+.profile-saved-toggle {
+  height: 7vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.profile-display-none {
+  display: none;
+}
+.profile-saved-toggle-each {
+  width: 49%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  /* border-bottom: 3px solid grey; */
+  padding: 5px;
+  font-weight: 700;
+}
+.profile-toggle-active {
+  color: #0095f6;
+  border: 2px solid #0095f6;
+}
+.main-profile-container {
+  height: 65vh;
+  /* border: 2px solid red; */
+  overflow-y: scroll;
+}
+.main-profile-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.main-profile-container::-webkit-scrollbar-track {
+  background: #f1f1f1ab;
+}
+
+/* Handle */
+.main-profile-container::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.808);
+  border-radius: 12px;
+  opacity: 0.6;
+}
+
+/* Handle on hover */
+.main-profile-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.individual-post-profile {
+  height: 60%;
+  width: 42vh;
+  margin: 1.1%;
+  border-radius: 12px;
+  background-color: rgba(177, 177, 177, 0.199);
+  /* border: 1px solid black; */
+  display: inline-block;
+}
+.individual-post-profile-img {
+  width: inherit;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  height: -webkit-fill-available;
+}
+.individual-post-profile-heading {
+  font-size: 14px;
+  padding: 6px 9px;
+  font-weight: 500;
+  background-color: gainsboro;
+  margin-top: -4px;
+  text-decoration: none;
+  color: #000;
+  border-radius: 0 0 12px 12px;
+}
+@media screen and (max-width: 1300px) {
+  .profile-container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    /* overflow-y: scroll; */
+  }
+  .main-profile-container {
+    text-align: -webkit-center;
+  }
+  .profile-container-upper-heading {
+    font-size: 19px;
+    font-family: "Montserrat", sans-serif;
+    padding: 7px;
+  }
+  .profile-container-infobox {
+    height: auto;
+  }
+  .profile-profile-image {
+    width: 33%;
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 14px;
+    padding-top: 8px;
+    box-sizing: border-box;
+    height: 22vh;
+  }
+  .profile-profile-image-img {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .profile-profile-displayname {
+    font-size: 16px;
+    margin: 0.4px;
+    padding-top: 9px;
+    padding-left: 5px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+  }
+  .profile-profile-username {
+    color: rgb(138, 138, 138);
+    font-size: 13px;
+    padding-left: 5px;
+    padding-top: 2px;
+    font-family: "Nunito", sans-serif;
+  }
+  .profile-detail-profile {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .profile-detail-each-profile {
+    font-size: 11px;
+    margin: 0.6px;
+    padding: 0.4px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+  }
+  .number-profile {
+    font-size: 14px;
+    margin: 0.6px;
+    margin-top: 5px;
+    padding: 0.4px;
+    font-family: "Nunito", sans-serif;
+  }
+  .editprofile {
+    font-size: 12px !important;
+  }
+  .editprofile-text {
+    display: none;
+  }
+  .profile-bio {
+    font-size: 14px;
+    margin: 0.6px;
+    padding-top: 4px;
+    padding-left: 5px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+  }
+  .profile-bio-detail {
+    font-size: 14px;
+    margin: 0.6px;
+    padding-top: 6px;
+    padding-left: 7px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 300;
+  }
+  .individual-post-profile {
+    height: 60%;
+    width: 42vh;
+    margin-top: 20px;
+    margin: 0.8%;
+    border-radius: 12px;
+    background-color: rgba(177, 177, 177, 0.199);
+    /* border: 1px solid black; */
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .individual-post-profile {
+    width: 39vh;
+  }
+  .profile-detail-each {
+    font-size: 14px;
+  }
+}
