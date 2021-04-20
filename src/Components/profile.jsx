@@ -120,10 +120,10 @@ function Profile() {
                         </div>
                         <div className="follower-each-modal-info">
                           <div className="follower-each-modal-info-displayname">
-                            {followers.userName}
+                            {followers?.userName}
                           </div>
                           <div className="follower-each-modal-info-username">
-                            {followers.firstName}
+                            {followers?.firstName}
                           </div>
                         </div>
                         <div className="follower-each-modal-remove">remove</div>
