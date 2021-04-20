@@ -28,7 +28,7 @@ function Chatpage() {
   const [user2Name, setuser2Name] = useState("")
   const [user2avatar, setuser2avatar] = useState("")
   useEffect(() => {
-    console.log(toggleContact)
+    // console.log(toggleContact)
     if (toggleContact != null) {
 
       // socket.emit("getPrivatePreviousChat", {
@@ -70,7 +70,7 @@ function Chatpage() {
         );
         // console.log(result.data);
         setData(data.userChats);
-        console.log(Data, "******************")
+        // console.log(Data, "******************")
         // console.log(Data, "this is ???????????DAta")
         // setLoading(false);
       } catch (e) {

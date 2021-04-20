@@ -6,7 +6,7 @@ import { useSelector } from "react-redux"
 const socket = io("https://quinkpostbackend.herokuapp.com", { transports: ['websocket', 'polling', 'flashsocket'] });
 
 export default function ChatContent({ chatCommonId, sender, user2Id, user2Name }) {
-  console.log(chatCommonId, sender, user2Id, "<<<<<")
+  // console.log(chatCommonId, sender, user2Id, "<<<<<")
   // console.log(ChatMessage,"this is chat message from chat content screen")
   // const senderId=ChatMessage[0].sender._id
   const messagesEndRef = createRef(null);
@@ -17,7 +17,7 @@ export default function ChatContent({ chatCommonId, sender, user2Id, user2Name }
   const [newMessage, setnewMessage] = useState(false)
   const user = useSelector(state => state.user)
   const toggleContactReducer = useSelector(state => state.toggleContactReducer)
-  console.log(toggleContactReducer, "<<<<<<This is toggleChat contact")
+  // console.log(toggleContactReducer, "<<<<<<This is toggleChat contact")
   // const [initialMessage,setinitialMessage] = useState(false)
   // const [inComingChat,setinComingChat] = useState(ChatMessage)
   const [ChatMessage, setChatMessage] = useState([])
@@ -27,7 +27,7 @@ export default function ChatContent({ chatCommonId, sender, user2Id, user2Name }
   useEffect(() => {
     // setinComingChat(ChatMessage)
     // console.log("useEffectCalled")
-    console.log("inside useEffect")
+    // console.log("inside useEffect")
     socket.emit("getPrivatePreviousChat", {
       chatId: chatCommonId,
       sender: sender,
@@ -38,7 +38,7 @@ export default function ChatContent({ chatCommonId, sender, user2Id, user2Name }
   socket.on("initialMessage", data => {
     // console.log(data)
     // console.log ( data,"this is initial message")
-    console.log(data[0], "this is data")
+    // console.log(data[0], "this is data")
 
     setChatMessage(data)
   })
@@ -79,7 +79,7 @@ export default function ChatContent({ chatCommonId, sender, user2Id, user2Name }
     // console.log(data,">><<gettint message")
     // console.log("new message >>>>>>>>>>", data.message.message, ">>>>>>>>>>>>>",socket.id)
     // console.log('Incoming message:', data)
-    console.log(data.message, "this is data from sending me")
+    // console.log(data.message, "this is data from sending me")
     // console.log(data.message, "this is messages")
 
     setChatMessage([...ChatMessage, data.message])

@@ -6,12 +6,14 @@ export default function ChatItem(props) {
   const { senderId } = props
   const { user } = useSelector(state => state)
   const userId = user._id
+  console.log(props, "!!!!!!!!!!!!!!!!!!!!!")
   const checkLeftOrRight = () => {
+
     if (userId == senderId) {
       return "chat__item"
     }
     else {
-      return "chat__item other"
+      return "chat__item_other"
     }
   }
   return (

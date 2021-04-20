@@ -276,7 +276,7 @@ const Loginpage = () => {
           />
         </div>
         <div className="remember-me">
-          <input type="checkbox" /> remember me{" "}
+          <input type="checkbox" style={{ cursor: "pointer" }} /> remember me{" "}
         </div>
         <button className="button-login" onClick={submitLogin}>
           Login

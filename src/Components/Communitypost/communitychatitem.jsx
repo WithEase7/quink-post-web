@@ -4,7 +4,7 @@ import ChatAvatar from "../chatavatar";
 export default function CommunityChatItem({ data }) {
   // console.log(props.data,"<<))))))")\
   const { message, timeStamp, user } = data;
-  console.log(user, "this is data in community chat");
+  // console.log(user, "this is data in community chat");
   // console.log(user,"this is userName")
   // const{userName,avatar}=user
   // console.log(message,timeStamp,user)
