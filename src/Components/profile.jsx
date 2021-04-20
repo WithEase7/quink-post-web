@@ -79,7 +79,7 @@ function Profile() {
               <div className="profile-profile-displayname">
                 {loggedInUser?.userName}
               </div>
-              <div className="profile-profile-username">{loggedInUser.firstName}</div>
+              <div className="profile-profile-username">{loggedInUser?.firstName}</div>
             </div>
             <Link to="/edit" className="edit-link">
               <div className="editprofile">
@@ -149,17 +149,17 @@ function Profile() {
                 </div>
                 <div className="follower-each-modal-container">
                   {(() => {
-                    return followings.map((following, key) => {
+                    return followings?.map((following, key) => {
                       return <div className="follower-each-modal">
                         <div className="follower-each-modal-avatar">
                           <Avatar />
                         </div>
                         <div className="follower-each-modal-info">
                           <div className="follower-each-modal-info-displayname">
-                            {following.userName}
+                            {following?.userName}
                           </div>
                           <div className="follower-each-modal-info-username">
-                            {following.firstName}
+                            {following?.firstName}
                           </div>
                         </div>
                         <div className="follower-each-modal-remove">unfollow</div>
@@ -209,12 +209,12 @@ function Profile() {
               >
                 <div className="individual-post-profile" key={index}>
                   <img
-                    src={post.image}
+                    src={post?.image}
                     alt=""
                     className="individual-post-profile-img"
                   />
                   <div className="individual-post-profile-heading">
-                    {post.caption}
+                    {post?.caption}
                   </div>
                 </div>
               </Link>
@@ -236,12 +236,12 @@ function Profile() {
               >
                 <div className="individual-post-profile" key={index}>
                   <img
-                    src={post.image}
+                    src={post?.image}
                     alt=""
                     className="individual-post-profile-img"
                   />
                   <div className="individual-post-profile-heading">
-                    {post.caption}
+                    {post?.caption}
                   </div>
                 </div>
               </Link>
