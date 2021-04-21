@@ -262,20 +262,20 @@ function Primaryfeed() {
             >
               <div className="profile-info">
                 <div className="profile-img">
-                  <Avatar src={profileimage} className="profile-avatar" />
+                  <Avatar src={layerUser?.user?.avatar} className="profile-avatar" />
                 </div>
                 <div className="profile-names">
                   <div className="profile-displayname">
                     {(() => {
                       if (layerUser) {
-                        return layerUser.user.userName;
+                        return layerUser?.user?.userName;
                       }
                     })()}
                   </div>
                   <div className="profile-username">
                     {(() => {
                       if (layerUser) {
-                        return layerUser.user.firstName;
+                        return layerUser?.user?.firstName;
                       }
                     })()}
                   </div>
@@ -287,7 +287,7 @@ function Primaryfeed() {
                   <div className="number">
                     {(() => {
                       if (layerUser) {
-                        return layerUser.user.post.length;
+                        return layerUser?.user?.post?.length;
                       }
                     })()}
                   </div>
@@ -298,7 +298,7 @@ function Primaryfeed() {
                   <div className="number">
                     {(() => {
                       if (layerUser) {
-                        return layerUser.user.followers.length;
+                        return layerUser?.user?.followers?.length;
                       }
                     })()}
                   </div>
@@ -309,7 +309,7 @@ function Primaryfeed() {
                   <div className="number">
                     {(() => {
                       if (layerUser) {
-                        return layerUser.user.followings.length;
+                        return layerUser?.user?.followings?.length;
                       }
                     })()}
                   </div>

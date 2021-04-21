@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../navbar";
 import { Avatar } from "@material-ui/core";
 import { Link } from "react-router-dom";
@@ -14,14 +14,16 @@ import axios from 'axios';
 import CancelIcon from "@material-ui/icons/Cancel";
 import { useHistory } from "react-router-dom";
 import BACKEND from "../Constants/Backend";
+import { useSelector } from "react-redux"
 
 function Mobilemenu() {
   const history = useHistory();
   const [showLink, setshowLink] = useState("https://www.google.com");
-
+  const globalUser = useSelector((state) => state.user);
   useEffect(() => {
     (async () => {
       try {
+
         const data = await axios.get(`${BACKEND}/app/link`);
         setshowLink(data?.data?.downloadlink);
       } catch (e) {
@@ -42,27 +44,27 @@ function Mobilemenu() {
         <div className={`profile-card`}>
           <div className="profile-info">
             <div className="profile-img">
-              <Avatar src={profileimage} className="profile-avatar" />
+              <Avatar src={globalUser.avatar} className="profile-avatar" />
             </div>
             <div className="profile-names">
-              <div className="profile-displayname">Display Name</div>
-              <div className="profile-username">@user-name</div>
+              <div className="profile-displayname">{globalUser.firstName}</div>
+              <div className="profile-username">{globalUser.userName}</div>
             </div>
           </div>
           <div className="profilesecondary">
             <div className="profile-detail">
               <div className="profile-detail-each">Quinks</div>
-              <div className="number">24</div>
+              <div className="number">{globalUser.post?.length}</div>
             </div>
             <div className="line"></div>
             <div className="profile-detail">
               <div className="profile-detail-each">followers</div>
-              <div className="number">134</div>
+              <div className="number">{globalUser.followers?.length}</div>
             </div>
             <div className="line"></div>
             <div className="profile-detail">
               <div className="profile-detail-each">following</div>
-              <div className="number">64</div>
+              <div className="number">{globalUser.followings?.length}</div>
             </div>
           </div>
         </div>

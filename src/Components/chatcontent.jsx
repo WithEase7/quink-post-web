@@ -73,7 +73,7 @@ export default function ChatContent({ chatCommonId, sender, user2Id, user2Name }
 
   const sendThisMessage = () => {
     socket.emit('OneToOneChat', { sender: { _id: user._id, userName: user.userName, avatar: user.avatar }, user2: user2Id, chatId: chatCommonId, message: msg })
-
+    setmsg("")
   }
   socket.on('messageFromOne', data => {
     // console.log(data,">><<gettint message")
