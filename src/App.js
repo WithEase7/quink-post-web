@@ -64,7 +64,7 @@ function App() {
               <Route exact path="/:title/:username/:postId" component={Postdetail} />
               <Route exact path="/Communitydes/:communityId" component={Communitydes} />
               <Route exact path="/questiondes" component={Questiondes} />
-              <Route exact path="/postChallenge/:challengeId" component={EnterInChallenge} />
+              <Route exact path="/:challengeName/:challengeId" component={EnterInChallenge} />
               <Route exact path="/profileOther/:OtherProfileId/" component={ProfileOther} />
               <Route exact path="/admin/quinkpost/741258/originals" component={AdminPostsUpload} />
 

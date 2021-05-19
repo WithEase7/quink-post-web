@@ -4,6 +4,8 @@ import CancelOutlinedIcon from "@material-ui/icons/CancelOutlined";
 import Carousel from "react-elastic-carousel";
 import colour from "../Assets/colour.jpg";
 import profile from "../Assets/profile.jpg";
+
+import { useHistory } from "react-router-dom";
 import Loader from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -20,8 +22,11 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "../Styles/TextEditorPost.css";
 
 function PostChallenge(props) {
+    const history = useHistory();
+
     const globalState = useSelector((state) => state);
     const challengeId = props.match.params.challengeId;
+    const challengeName = props.match.params.challengeName
     console.log(props, "<<<<<<<<<<<<<<<<<<<<<<<");
     const [article, setArticle] = useState(true);
     const [imageAdd, setimageAdd] = useState("");
@@ -203,30 +208,37 @@ function PostChallenge(props) {
     const submitArticle = async (e) => {
         try {
             setshowLoader(true)
+            const checkvalue = window.confirm("ARE YOU SURE ,YOU WANT TO SUBMIT YOUR CONTENT.")
             e.preventDefault();
-            // console.log(articleData, "{{{{{{{{{{{{{{{{{{{");
-            // console.log({ title, description })
-            const result = await axios.post(`${BACKEND}/challenge/participate`, {
-                author: globalState.user._id,
-                title: articleData.title,
-                challengeId: challengeId,
-                body: convertedContent,
-                lang: lang,
-                type: selectedValue,
-                caption: articleData.caption,
-                image: articleImage,
-                isChallengePost: true
-            });
-            if (result.data.success) {
-                console.log(result.data, "<<<<{{{");
-                console.log("success");
-                setConvertedContent(null)
-                setarticleData({ title: "", caption: "" })
-                setshowLoader(false)
-            } else {
-                setshowLoader(false)
-                alert("something went wrong")
+            if (checkvalue) {
+               
+                // console.log(articleData, "{{{{{{{{{{{{{{{{{{{");
+                // console.log({ title, description })
+                const result = await axios.post(`${BACKEND}/challenge/participate`, {
+                    author: globalState.user._id,
+                    title: articleData.title,
+                    challengeId: challengeId,
+                    body: convertedContent,
+                    lang: lang,
+                    type: selectedValue,
+                    caption: articleData.caption,
+                    image: articleImage,
+                    isChallengePost: true
+                });
+                if (result.data.success) {
+                    console.log(result.data, "<<<<{{{");
+                    console.log("success");
+                    setConvertedContent(null)
+                    setarticleData({ title: "", caption: "" })
+                    setshowLoader(false)
+                    history.push("/homeScreen");
+                } else {
+                    setshowLoader(false)
+                    alert("Fill your content correctly something is missing ??")
+                }
             }
+           
+           
         } catch (e) {
             console.log(e);
         }
@@ -457,7 +469,7 @@ function PostChallenge(props) {
     return (
         <div className="addpost-container">
             <div className="addpost-header">
-                <div className="addpost-title">Create Post</div>
+                <div className="addpost-title">{challengeName}</div>
                 <div className="cancel-addpost">
                     <Link to="/homeScreen" className="cancel-icon-addpost">
                         <CancelOutlinedIcon style={{ fontSize: 32 }} />

@@ -4,5 +4,17 @@
 }
 .challenge-discription-header {
   font-weight: 600;
+  
   padding: 7px 0px;
+}
+.challenge-container {
+  background: linear-gradient( rgba(255,255,255, 0.5), rgba(192, 192, 192, 0.4));
+  border-radius: 9px;
+  /* width:55%; */
+  width:60%;
+  margin: 17px 45px;
+  margin-bottom: 21px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 2px 2px #9f9e9e82;
 }

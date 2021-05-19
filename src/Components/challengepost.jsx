@@ -13,11 +13,11 @@ function Challengepost({ challenge }) {
   const challengeId = challenge?._id;
   // console.log(end,"this is end date of challenge")
   return (
-    <div className="communitypost-container">
-        <div className="community-header">
-          <Avatar src={Quinkpost} className="community-avatar" />
-          <div className="community-title">Quink Post Challenge</div>
-        </div>
+    <div className="challenge-container">
+      <div className="community-header">
+        <Avatar src={Quinkpost} className="community-avatar" />
+        <div className="community-title">Quink Post Challenge</div>
+      </div>
       {/* <div className="post-info">
         <div className="challenge-discription">
           <div className="challenge-discription-1">
@@ -37,13 +37,13 @@ function Challengepost({ challenge }) {
           </div>
         </div>
       </div> */}
-      <img src={Quinkpost} />
+      <img src={challenge.image ? challenge?.image : Quinkpost} style={{ height: "35rem", width: "100%" }} />
       <div className="join-community">
         <div className="members">
           <PersonIcon />
-          Participants :<div className="members-no">431</div>
+          Participants :<div className="members-no">{parseInt(challenge?.participants?.length) + parseInt(104)}</div>
         </div>
-        <Link to={{ pathname: `/postChallenge/${challengeId}` }} style={{textDecoration: "none", color: "#282c37"}}>
+        <Link to={{ pathname: `/${challenge?.title}/${challengeId}` }} style={{ textDecoration: "none", color: "#282c37" }}>
           <div className="community-readmore">Enter</div>
         </Link>
       </div>
