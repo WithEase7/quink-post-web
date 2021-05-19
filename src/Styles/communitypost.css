@@ -1,0 +1,74 @@
+.communitypost-container {
+  background: linear-gradient( rgba(255,255,255, 0.5), rgba(192, 192, 192, 0.4));
+  border-radius: 9px;
+  width: 82%;
+  margin: 17px 45px;
+  margin-bottom: 21px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 2px 2px #9f9e9e82;
+}
+
+.community-header {
+  border-bottom: 1px solid rgb(37, 37, 37);
+  display: flex;
+  align-items: center;
+}
+.community-avatar {
+  margin: 6px 9px;
+}
+.community-title {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+}
+.community-caption {
+  padding: 8px;
+  /* font-family: "Quicksand", sans-serif; */
+}
+.join-community {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.members {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 12px 23px;
+  margin-bottom: 16px;
+  padding: 7px;
+  border: 1px solid rgba(0, 0, 0, 0.295);
+  border-radius: 6px;
+}
+.members-no {
+  margin-left: 5px;
+}
+.community-readmore {
+  align-self: flex-end;
+  /* border: 2px solid red; */
+  margin: 12px 19px;
+  margin-bottom: 18px;
+  padding: 6px 24px;
+  cursor: pointer;
+  border-radius: 32px;
+  background-color: #0094f69c;
+  color: #282c37;
+  font-family: "Open Sans", sans-serif;
+  /* font-weight: 700; */
+  box-shadow: 1px 1px 1px 0.001px rgb(94, 94, 94);
+}
+@media screen and (max-width: 500px) {
+  .communitypost-container {
+    background: linear-gradient( rgba(255,255,255, 0.5), rgba(192, 192, 192, 0.4));
+    border-radius: 9px;
+    width: 98%;
+    margin: 17px auto;
+    margin-bottom: 21px;
+    display: flex;
+    flex-direction: column;
+  }
+  .members {
+    padding: 0px;
+  }
+}

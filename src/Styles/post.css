@@ -1,0 +1,100 @@
+.post-container {
+  /* background-color: rgba(192, 192, 192, 0.445); */
+  background: linear-gradient( rgba(255,255,255, 0.5), rgba(192, 192, 192, 0.4));
+  border-radius: 9px;
+  width: 74%;
+  margin: 17px 45px;
+  margin-bottom: 21px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 2px 2px #9f9e9e82;
+}
+.profile-1 {
+  display: flex;
+  align-items: flex-start;
+  /* width: 3%; */
+  margin: 12px;
+  /* border: 2px solid blue; */
+}
+.user {
+  display: inline;
+  /* border: 2px solid red; */
+  margin: 0px 14px;
+  /* width: 60%; */
+}
+.user > p {
+  margin: 0px;
+  padding: 0px;
+}
+.displayname {
+  font-size: 17px;
+  margin: 0.6px;
+  padding: 0.4px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  /* border: 2px solid red; */
+}
+.username {
+  color: grey;
+  font-size: 15px;
+  padding: 0.3px;
+  font-family: "Nunito", sans-serif;
+}
+.image {
+  margin: 0px auto;
+}
+.image > img {
+  width: 100%;
+  height: auto;
+}
+.post-info {
+  /* border: 0.02px solid black; */
+  /* background-color: white; */
+  /* background-color: rgba(247, 243, 243, 0.3); */
+  border-radius: 24px;
+  margin: 12px;
+  /* padding: 14px; */
+  height: 60%;
+}
+.header {
+  border-bottom: 0.3px solid black;
+  padding: 14px 25px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 19px;
+}
+.caption {
+  padding: 12px 24px;
+  font-family: "Quicksand", sans-serif;
+}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+.readmore {
+  align-self: flex-end;
+  margin: 6px 12px;
+  margin-bottom: 12px;
+  padding: 6px 24px;
+  cursor: pointer;
+  border-radius: 32px;
+  text-decoration: none !important;
+  background-color: #0094f69c;
+  color: #282c37;
+  font-family: "Open Sans", sans-serif;
+  /* font-weight: 700; */
+  box-shadow: 1px 1px 1px 0.001px rgb(94, 94, 94);
+}
+
+@media screen and (max-width: 500px) {
+  .post-container {
+    width: 96%;
+    margin: 4px auto;
+    margin-bottom: 23px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 2036px) {
+  .image > img {
+    max-width: -webkit-fill-available;
+    width: 100%;
+  }
+}
