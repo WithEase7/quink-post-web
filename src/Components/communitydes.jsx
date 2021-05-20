@@ -44,6 +44,7 @@ function Communitydes(props) {
   const [challengesModal, setChallengesModal] = useState(false);
   const [articleImage, setarticleImage] = useState("")
   const [caption, setcaption] = useState("")
+  const [commName, setCommName] = useState("")
   // >>>>>>>>>>>>>>>
   useEffect(() => {
     (async () => {
@@ -51,6 +52,7 @@ function Communitydes(props) {
       console.log(result.data, "*************************")
       setpost(result.data.community.post)
       setquestions(result.data.community.question)
+      setCommName(result.data.community.title)
     })()
   }, [])
 
@@ -134,7 +136,7 @@ function Communitydes(props) {
           <div className="mobile-vertical-icon">
             <div className="Communitydes-container-upper-info-1">
               <div className="Communitydes-container-upper-info-brand">
-                Community Name
+                {commName}
               </div>
               <div className="Community-members">Members: 123</div>
               <div className="Community-members online">Online: 23</div>

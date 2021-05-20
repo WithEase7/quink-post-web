@@ -8,10 +8,10 @@ import axios from "axios";
 import BACKEND from "./Constants/Backend";
 // import { Link } from '@material-ui/icons';
 
-function Communitypost({ title,description,communityId}) {
+function Communitypost({ title, description, communityId }) {
   // ????????
   // console.log(data);
-  console.log(communityId,"thi i s data from community post .js")
+  console.log(communityId, "thi i s data from community post .js")
 
   // useEffect(() => {
   //   {(async()=>{
@@ -31,7 +31,7 @@ function Communitypost({ title,description,communityId}) {
         <div className="community-caption">
           {/* {data.description} */}
           {/* {data.description} */}
-         {description}
+          {description}
         </div>
       </div>
       <div className="join-community">
@@ -40,7 +40,7 @@ function Communitypost({ title,description,communityId}) {
           Members :<div className="members-no">4301</div>
         </div>
         <div className="community-readmore">
-          <Link style={{textDecoration: 'none', color: '#282c37'}} to={{ pathname: `/communitydes/${communityId}`, }}>Join</Link>
+          <Link style={{ textDecoration: 'none', color: '#282c37' }} to={{ pathname: `/communitydes/${communityId}`, }}>Join</Link>
         </div>
       </div>
     </div>

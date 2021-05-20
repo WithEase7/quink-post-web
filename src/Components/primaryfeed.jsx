@@ -67,7 +67,7 @@ function Primaryfeed() {
   useEffect(() => {
     (async () => {
       try {
-
+        console.log(" In ++++++++++++++++++++++++++++++++++")
 
         const userToken = await localStorage.getItem("Quink-Post");
         if (userToken == "") {
@@ -90,6 +90,7 @@ function Primaryfeed() {
       const getNoti = await axios.get(
         `${BACKEND}/notification/all/${layerUser?.user?._id}`
       );
+      console.log("%%%getiingig")
       const notifications = getNoti.data.NotiFilter;
       console.log(notifications, "%%%");
       const tem = layerUser.user.notification
@@ -149,7 +150,7 @@ function Primaryfeed() {
       );
       if (data.success) {
         const updatedUser = data?.user;
-        console.log(data?.user, "<<<<OOO");
+        // console.log(data?.user, "<<<<OOO");
 
         dispatch({ type: USER_LOGGED_IN, payload: updatedUser });
         setnotiLength(null);
@@ -318,12 +319,12 @@ function Primaryfeed() {
     setSidebar(true);
     setMenubtn(false);
   };
-  console.log(showSearch, "<<<<thsi is search");
+  // console.log(showSearch, "<<<<thsi is search");
 
   const submitSearch = async (e) => {
     e.preventDefault();
-    console.log(searchField, "<<<<<", searchField.trim());
-    console.log("ok time submit it");
+    // console.log(searchField, "<<<<<", searchField.trim());
+    // console.log("ok time submit it");
     if (searchField.trim() != "") {
       // console.log(get)
       // setTimeout(() => {

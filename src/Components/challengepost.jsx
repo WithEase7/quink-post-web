@@ -43,7 +43,7 @@ function Challengepost({ challenge }) {
           <PersonIcon />
           Participants :<div className="members-no">{parseInt(challenge?.participants?.length) + parseInt(104)}</div>
         </div>
-        <Link to={{ pathname: `/${challenge?.title}/${challengeId}` }} style={{ textDecoration: "none", color: "#282c37" }}>
+        <Link to={{ pathname: `/challenge/${challenge?.title}/${challengeId}/participate` }} style={{ textDecoration: "none", color: "#282c37" }}>
           <div className="community-readmore">Enter</div>
         </Link>
       </div>
