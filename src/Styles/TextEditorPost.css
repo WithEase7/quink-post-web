@@ -1,0 +1,54 @@
+.App-header {
+    background-color: #282c34;
+    min-height: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    margin-bottom: 5vh;
+    text-align: center;
+  }
+  .preview {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  .rdw-image-center {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  
+  .rdw-center-aligned-block * {
+    text-align: center !important;
+  }
+  .public-DraftStyleDefault-ltr {
+    text-align: inherit !important;
+  }
+  .wrapper-class {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 17px;
+  }
+  .editor-class {
+    background-color: lightgray;
+    padding: 1rem;
+    border: 1px solid #ccc;
+  }
+  .editor-class figure {
+    margin: 0;
+}
+.editor-class .rdw-image-left {
+    display: unset;
+    float: left;
+}
+.editor-class .rdw-image-right {
+    display: unset;
+    justify-content: unset;
+    float: right;
+}
+  .toolbar-class {
+    border: 1px solid #ccc;
+    /* border-radius: 15px; */
+  }
+  

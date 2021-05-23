@@ -1,0 +1,157 @@
+.profile-other-container-infobox {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 7px;
+}
+.profileother-followbutton {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 7px 12px;
+}
+.profileother-followbutton-each {
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background-color: #0095f6;
+  color: white;
+  padding: 12px 72px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 6px 12px;
+}
+.profileother-followbutton-each-following {
+  border: 2px solid #0095f6;
+  border-radius: 12px;
+  background-color: white;
+  color: #0095f6;
+  padding: 12px 72px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 6px 12px;
+}
+.display-follow {
+  display: none;
+}
+.profile-other-profile-image {
+  width: 34%;
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px;
+  padding-top: 8px;
+  box-sizing: border-box;
+  height: auto;
+}
+.followers-modal {
+  width: 36%;
+  height: 77%;
+  margin: 12px auto;
+  margin-top: 53px;
+  background-color: white;
+  border-radius: 22px;
+  border: 1px solid black;
+  outline: none;
+}
+.follower-modal-header {
+  height: 9%;
+  /* border: 1px solid red; */
+  border-bottom: 1px solid rgba(128, 128, 128, 0.479);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 15px;
+  box-sizing: border-box;
+}
+.follower-modal-header-head {
+  font-weight: 700;
+}
+.follower-each-modal-container {
+  /* border: 1px solid red; */
+  overflow-y: scroll;
+  height: 91%;
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  box-sizing: border-box;
+}
+.follower-each-modal-container::-webkit-scrollbar {
+  width: 8px;
+}
+.follower-each-modal-container::-webkit-scrollbar-track {
+  background: #f1f1f1ab;
+}
+.follower-each-modal-container::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.808);
+  border-radius: 12px;
+  opacity: 0.6;
+}
+.follower-each-modal-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 85, 85, 0.74);
+}
+.follower-each-modal {
+  display: flex;
+  align-items: center;
+  padding: 13px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+  width: 100%;
+  box-sizing: border-box;
+}
+.follower-each-modal-avatar {
+  margin-right: 16px;
+  max-width: 12%;
+}
+.follower-each-modal-info {
+  width: 68%;
+  /* border: 1px solid red; */
+  overflow: hidden;
+}
+.follower-each-modal-info-displayname {
+  font-size: 17px;
+  font-weight: 700;
+}
+.follower-each-modal-info-username {
+  color: grey;
+  font-size: 15px;
+}
+.follower-each-modal-remove {
+  width: 16%;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0095f6;
+  margin-left: 2%;
+  padding: 4px 0px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #0095f6;
+}
+@media screen and (max-width: 1300px) {
+  .profileother-followbutton-each {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #0095f6;
+    color: white;
+    padding: 8px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 4px 8px;
+  }
+  .profileother-followbutton-each-following {
+    border: 1px solid #0095f6;
+    border-radius: 4px;
+    background-color: white;
+    color: #0095f6;
+    padding: 8px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 4px 8px;
+  }
+  .followers-modal {
+    width: 93%;
+  }
+}

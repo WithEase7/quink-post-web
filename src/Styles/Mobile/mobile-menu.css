@@ -1,0 +1,38 @@
+@media screen and (max-width: 1300px) {
+  .profile-card {
+    width: 100%;
+    padding-top: 130px;
+    margin: 0px;
+    height: 12%;
+    border-radius: none;
+    box-sizing: border-box;
+  }
+  .sidemenu-container {
+    width: 100%;
+    margin: 0px;
+    border-radius: 0px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 39%;
+    left: 0%;
+    /* border: 2px solid red; */
+    box-sizing: border-box;
+    height: auto;
+  }
+  .sidemenu-btn {
+    width: 100%;
+    margin: 0vw;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0px;
+    padding: 5% 2%;
+    box-sizing: border-box;
+  }
+  .sidemenu-btn:hover {
+    border: none;
+    border-bottom: 1px solid black;
+  }
+}
