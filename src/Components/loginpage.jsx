@@ -34,6 +34,14 @@ const Loginpage = () => {
   const [showLink, setshowLink] = useState(applink);
   const [showLoader, setshowLoader] = useState(false);
   const [showtoken, setshowtoken] = useState("");
+  const [Mismatch, setMismatch] = useState(false)
+  const [forgot, setforgot] = useState({
+    email: "",
+    forgotPassword1: "",
+    forgotPassword2: "",
+
+  })
+  const [emailmatched, setemailmatched] = useState(false)
 
   useEffect(() => {
     (async () => {
@@ -270,6 +278,19 @@ const Loginpage = () => {
     </Card>
   );
 
+  const matchThisEmail = async () => {
+    try {
+      console.log(forgot.email, "<<<<")
+      const { data } = await axios.get(`${BACKEND}/user/forgotit/${forgot.email}`)
+      // console.log(data)
+      if (data.success) {
+        setemailmatched(true)
+      }
+
+
+    } catch (e) { console.log(e) }
+  }
+
   const submitRegister = async (e) => {
     setshowLoader(true);
     e.preventDefault();
@@ -302,9 +323,37 @@ const Loginpage = () => {
     }
   };
 
+  const handleclick4 = () => {
+  setemailmatched(false)
+    if (register === null) {
+      setRegister(false)
+    }
+    if (register != null) {
+      setRegister(null)
+    }
+  }
+
+  const ChangePass = async () => {
+    try {
+      if (forgot.forgotPassword1 != forgot.forgotPassword2) {
+        setMismatch(true)
+
+      }
+      else {
+        const {data} = await axios.patch(`${BACKEND}/user/changePassword/${forgot.email}/${forgot.forgotPassword1}`)
+        if(data.success){
+          alert("reset password successful")
+          setRegister(false)
+        }
+      }
+    } catch (e) { console.log(e) }
+  }
+
+
   const handleclick1 = () => {
     if (register === true) {
       setRegister(false);
+
     }
     if (active == true) {
       setActive(false);
@@ -315,6 +364,7 @@ const Loginpage = () => {
     if (active == false) {
       setActive(true);
     }
+
   };
   let form;
   let formtitle;
@@ -446,7 +496,7 @@ const Loginpage = () => {
         </button>
       </div>
     );
-  } else {
+  } else if (register == false) {
     form = (
       <div className="loginbox position-1">
         <a href="https://play.google.com/store/apps/details?id=com.quinkpost.quinkpost">
@@ -532,8 +582,8 @@ const Loginpage = () => {
         })()}
 
         <div style={{ display: "flex", flexDirection: "row", alignContent: 'center', margin: "10px" }}>
-          <input type="checkbox" style={{ cursor: "pointer" }} /> <div style={{fontSize: 14}}>remember me</div>
-          <Link to='/forgotPassword' style={{ marginLeft: "60px", textDecoration: "none", color: "blue", fontSize: 14 }}>forgot password?</Link>
+          <input type="checkbox" style={{ cursor: "pointer" }} /> <div style={{ fontSize: 14 }}>remember me</div>
+          <span onClick={handleclick4} style={{ marginLeft: "60px", textDecoration: "none", color: "blue", fontSize: 14 }}>forgot password?</span>
         </div>
         <button className="button-login" onClick={submitLogin}>
           Login
@@ -543,7 +593,147 @@ const Loginpage = () => {
         </button>
       </div>
     );
+  } else if (register == null) {
+    form = (
+      <div className="loginbox position-1">
+        <a href="https://play.google.com/store/apps/details?id=com.quinkpost.quinkpost">
+          <button
+            className="button-login"
+            style={{
+              width: "8rem",
+              height: "3rem",
+              fontSize: "1rem",
+              padding: "4px",
+            }}
+          >
+            Download App
+          </button>
+        </a>
+
+        <h1>Quink Post | Forgot Password</h1>
+
+        <div style={{ marginBottom: 10 }}>
+          <span
+            style={{
+              fontSize: "1.3rem",
+              fontWeight: "bold",
+              color: "#0095f6",
+              marginRight: 10,
+              backgroundColor: "#fff",
+              textShadow: "1px 1px grey",
+            }}
+          >
+            Login with google
+            {/* {showtoken} */}
+          </span>
+          <GoogleLogin
+            clientId="990734078330-qteq6i15s9cni5apfkt9qv2okudhqk93.apps.googleusercontent.com"
+            buttonText="Login"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            cookiePolicy={"single_host_origin"}
+          />
+        </div>
+        {(() => {
+          if (showLoader) {
+            return (
+              <>
+                <div className="info-box" style={{ alignItems: "center" }}>
+                  <Loader
+                    visible={showLoader}
+                    type="MutatingDots"
+                    color="#00BFFF"
+                    height={100}
+                    width={100}
+                  />
+                </div>
+              </>
+            );
+          } else {
+            // setemailmatched(false)
+
+            return (
+              <>
+                {" "}
+                <div className="info-box">
+                  <label htmlFor="email">Email :</label>
+                  <input
+                    type="text"
+                    id="username"
+                    value={forgot.email}
+                    onChange={(value) =>
+                      setforgot({ ...forgot, email: value.target.value })
+                    }
+                  />
+                  {
+                    (() => {
+                      if (emailmatched) {
+                        // if(Mismatch){
+                        //   // return  <div> Password should be same</div>
+                        // }
+                        return (<>
+                          <label htmlFor="password">New Password :</label>
+                          <input
+                            type="password"
+                            id="password"
+                            value={forgot.forgotPassword1}
+                            onChange={(value) =>
+                              setforgot({ ...forgot, forgotPassword1: value.target.value })
+                            }
+                          />
+                          <label htmlFor="password">Retype password</label>
+                          <input
+                            type="password"
+                            id="password"
+                            value={forgot.forgotPassword2}
+                            onChange={(value) =>
+                              setforgot({ ...forgot, forgotPassword2: value.target.value })
+                            }
+                          />
+                        </>)
+                      }
+                    })()
+                  }
+
+
+                </div>
+              </>
+            );
+          }
+        })()}
+
+        <div style={{ display: "flex", flexDirection: "row", alignContent: 'center', margin: "10px" }}>
+          <input type="checkbox" style={{ cursor: "pointer" }} /> <div style={{ fontSize: 14 }}>remember me</div>
+          <span onClick={handleclick4} style={{ marginLeft: "60px", textDecoration: "none", color: "blue", fontSize: 14 }}> Go to Login</span>
+        </div>
+        {(() => {
+          if (!emailmatched) {
+            return <button className="button-login" onClick={matchThisEmail}>
+              Submit
+        </button>
+          }
+          else{
+            if(Mismatch){
+              return <button className="button-login"style={{backgroundColor:"red"}}  onClick={()=>setMismatch(false)}>
+           Password should be same
+        </button>
+            }
+            return <button className="button-login"  onClick={ChangePass}>
+              Change Password
+        </button>
+          }
+        })()}
+
+        <button onClick={handleclick1} className="button-toggle">
+          {formtitle}
+        </button>
+      </div>
+    );
   }
+
+
+
+
   return (
     <>
       <Scrollspy

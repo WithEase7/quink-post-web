@@ -1,12 +1,16 @@
+import axios from "axios";
 import React, { useState } from "react";
 import Loader from "react-loader-spinner";
+import BACKEND from "./Constants/Backend";
 
 function ForgotPossword() {
   const [showforgotLoader, setshowforgotLoader] = useState(false);
   const [showinput, setshowinput] = useState(false);
-
-  const handleshowforgotLoader = () => {
+  
+  const handleshowforgotLoader =async () => {
     setshowforgotLoader(true);
+    const user=await axios.get(`${BACKEND}/user/forgotPass/:`)
+
     setshowinput(true);
   };
 
@@ -46,11 +50,12 @@ function ForgotPossword() {
           return (
             <div style={{ marginLeft: "27px", marginTop: "50px" }}>
               <div className="info-box">
-                <label htmlFor="username">Email :</label>
+                <label htmlFor="email">Email :</label>
                 <input
                   type="text"
                   required
                   id="username"
+                  // value={forgotEmail}
                   //   value={login.userName}
                   //   onChange={(value) =>
                   //     setLogin({ ...login, userName: value.target.value })
