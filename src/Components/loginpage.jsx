@@ -28,12 +28,12 @@ const Loginpage = () => {
     "https://apkfab.com/quink-post/com.quinkpost.quinkpost/apk?h=32e536d86dfa2803a52be2c2faa5bfedef20d6399515110b994b6e84fe68d84e";
   const [login, setLogin] = useState({
     userName: "",
-    password: ""
+    password: "",
   });
   const [registerValue, setregisterValue] = useState({});
   const [showLink, setshowLink] = useState(applink);
   const [showLoader, setshowLoader] = useState(false);
-  const [showtoken, setshowtoken] = useState("")
+  const [showtoken, setshowtoken] = useState("");
 
   useEffect(() => {
     (async () => {
@@ -45,8 +45,8 @@ const Loginpage = () => {
         // console.log(temp[0].applink)
         // setshowLoader(true);
         const userToken = await localStorage.getItem("Quink-Post");
-        console.log(userToken, ">>>>>>")
-        setshowtoken(userToken)
+        console.log(userToken, ">>>>>>");
+        setshowtoken(userToken);
         if (userToken != " ") {
           console.log(userToken);
           const result = await axios.post(`${BACKEND}/user/key`, {
@@ -109,12 +109,12 @@ const Loginpage = () => {
   };
 
   const submitLogin = async () => {
-    console.log(login,"<<<<<")
+    console.log(login, "<<<<<");
     setshowLoader(true);
     if (login.userName == "" || login.password == "") {
-      alert(" check username/password ")
-      setshowLoader(false)
-      return null
+      alert(" check username/password ");
+      setshowLoader(false);
+      return null;
     }
     try {
       console.log("checking logim");
@@ -161,7 +161,8 @@ const Loginpage = () => {
             Create Content! Earn Money!
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            India's first platform that let's you earn through content creation. Content can be created in native languages as well.
+            India's first platform that let's you earn through content creation.
+            Content can be created in native languages as well.
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -191,7 +192,8 @@ const Loginpage = () => {
             Participate in Ongoing Challenges.
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Participate in content creation challenges and win fiscal incentives.
+            Participate in content creation challenges and win fiscal
+            incentives.
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -221,7 +223,8 @@ const Loginpage = () => {
             A complete Infotainment Platform.
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            A platform where you can get both infotainment and knowledgeable stuff.
+            A platform where you can get both infotainment and knowledgeable
+            stuff.
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -251,7 +254,8 @@ const Loginpage = () => {
             Join Community! Interact, Share & Work!
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Connect with similar minds. Share your knowledge and learn from them.
+            Connect with similar minds. Share your knowledge and learn from
+            them.
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -354,79 +358,83 @@ const Loginpage = () => {
         </div>
         {(() => {
           if (showLoader) {
-            return (<>
-              <div className="info-box" style={{ alignItems: "center" }}>
-                <Loader
-                  visible={showLoader}
-                  type="MutatingDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                />
-              </div></>)
-          }
-          else {
-            return (<>
-              <div className="info-box">
-                <label htmlFor="firstname">FirstName:</label>
-                <input
-                  type="text"
-                  id="firstname"
-                  value={registerValue.firstName}
-                  onChange={(e) =>
-                    setregisterValue((prev) => {
-                      return { ...prev, firstName: e.target.value };
-                    })
-                  }
-                />
-                {/* <label htmlFor="lastname">LastName:</label>
+            return (
+              <>
+                <div className="info-box" style={{ alignItems: "center" }}>
+                  <Loader
+                    visible={showLoader}
+                    type="MutatingDots"
+                    color="#00BFFF"
+                    height={100}
+                    width={100}
+                  />
+                </div>
+              </>
+            );
+          } else {
+            return (
+              <>
+                <div className="info-box">
+                  <label htmlFor="firstname">FirstName:</label>
+                  <input
+                    type="text"
+                    id="firstname"
+                    value={registerValue.firstName}
+                    onChange={(e) =>
+                      setregisterValue((prev) => {
+                        return { ...prev, firstName: e.target.value };
+                      })
+                    }
+                  />
+                  {/* <label htmlFor="lastname">LastName:</label>
           <input type="text" id="lastname" /> */}
-                <label htmlFor="username-1">User Name</label>
-                <input
-                  type="text"
-                  id="username-1"
-                  value={registerValue.userName}
-                  onChange={(e) =>
-                    setregisterValue((prev) => {
-                      return { ...prev, userName: e.target.value };
-                    })
-                  }
-                />
-                <label htmlFor="email">Email</label>
-                <input
-                  type="text"
-                  id="email"
-                  value={registerValue.email}
-                  onChange={(e) =>
-                    setregisterValue((prev) => {
-                      return { ...prev, email: e.target.value };
-                    })
-                  }
-                />
-                <label htmlFor="pass-set">Password:</label>
-                <input
-                  type="password"
-                  id="pass-set"
-                  value={registerValue.password}
-                  onChange={(e) =>
-                    setregisterValue((prev) => {
-                      return { ...prev, password: e.target.value };
-                    })
-                  }
-                />
-                <label htmlFor="pass-set-1">Confirm Password:</label>
-                <input
-                  type="password"
-                  id="pass-set-1"
-                  value={registerValue.confirmPassword}
-                  onChange={(e) =>
-                    setregisterValue((prev) => {
-                      return { ...prev, confirmPassword: e.target.value };
-                    })
-                  }
-                />
-              </div>
-            </>)
+                  <label htmlFor="username-1">User Name</label>
+                  <input
+                    type="text"
+                    id="username-1"
+                    value={registerValue.userName}
+                    onChange={(e) =>
+                      setregisterValue((prev) => {
+                        return { ...prev, userName: e.target.value };
+                      })
+                    }
+                  />
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="text"
+                    id="email"
+                    value={registerValue.email}
+                    onChange={(e) =>
+                      setregisterValue((prev) => {
+                        return { ...prev, email: e.target.value };
+                      })
+                    }
+                  />
+                  <label htmlFor="pass-set">Password:</label>
+                  <input
+                    type="password"
+                    id="pass-set"
+                    value={registerValue.password}
+                    onChange={(e) =>
+                      setregisterValue((prev) => {
+                        return { ...prev, password: e.target.value };
+                      })
+                    }
+                  />
+                  <label htmlFor="pass-set-1">Confirm Password:</label>
+                  <input
+                    type="password"
+                    id="pass-set-1"
+                    value={registerValue.confirmPassword}
+                    onChange={(e) =>
+                      setregisterValue((prev) => {
+                        return { ...prev, confirmPassword: e.target.value };
+                      })
+                    }
+                  />
+                </div>
+              </>
+            );
           }
         })()}
 
@@ -440,9 +448,8 @@ const Loginpage = () => {
     );
   } else {
     form = (
-
       <div className="loginbox position-1">
-        <a href='https://play.google.com/store/apps/details?id=com.quinkpost.quinkpost'>
+        <a href="https://play.google.com/store/apps/details?id=com.quinkpost.quinkpost">
           <button
             className="button-login"
             style={{
@@ -482,45 +489,51 @@ const Loginpage = () => {
         </div>
         {(() => {
           if (showLoader) {
-            return (<>
-              <div className="info-box" style={{ alignItems: "center" }}>
-                <Loader
-                  visible={showLoader}
-                  type="MutatingDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                />
-              </div>
-            </>)
-          }
-          else {
-            return (<> <div className="info-box">
-              <label htmlFor="username">Username :</label>
-              <input
-                type="text"
-                id="username"
-                value={login.userName}
-                onChange={(value) =>
-                  setLogin({ ...login, userName: value.target.value })
-                }
-              />
-              <label htmlFor="password">Password :</label>
-              <input
-                type="password"
-                id="password"
-                value={login.password}
-                onChange={(value) =>
-                  setLogin({ ...login, password: value.target.value })
-                }
-              />
-            </div>
-            </>)
+            return (
+              <>
+                <div className="info-box" style={{ alignItems: "center" }}>
+                  <Loader
+                    visible={showLoader}
+                    type="MutatingDots"
+                    color="#00BFFF"
+                    height={100}
+                    width={100}
+                  />
+                </div>
+              </>
+            );
+          } else {
+            return (
+              <>
+                {" "}
+                <div className="info-box">
+                  <label htmlFor="username">Username :</label>
+                  <input
+                    type="text"
+                    id="username"
+                    value={login.userName}
+                    onChange={(value) =>
+                      setLogin({ ...login, userName: value.target.value })
+                    }
+                  />
+                  <label htmlFor="password">Password :</label>
+                  <input
+                    type="password"
+                    id="password"
+                    value={login.password}
+                    onChange={(value) =>
+                      setLogin({ ...login, password: value.target.value })
+                    }
+                  />
+                </div>
+              </>
+            );
           }
         })()}
 
-        <div className="remember-me">
-          <input type="checkbox" style={{ cursor: "pointer" }} /> remember me
+        <div style={{ display: "flex", flexDirection: "row", alignContent: 'center', margin: "10px" }}>
+          <input type="checkbox" style={{ cursor: "pointer" }} /> <div style={{fontSize: 14}}>remember me</div>
+          <Link to='/forgotPassword' style={{ marginLeft: "60px", textDecoration: "none", color: "blue", fontSize: 14 }}>forgot password?</Link>
         </div>
         <button className="button-login" onClick={submitLogin}>
           Login
@@ -660,7 +673,9 @@ const Loginpage = () => {
           </section>
           <section id="section-4">
             <h2 style={{ fontSize: "35px" }}>Contact Us</h2>
-            <p style={{ fontWeight: "bold", marginLeft: "8px" }}>E-Mail : info@quinkpost.com</p>
+            <p style={{ fontWeight: "bold", marginLeft: "8px" }}>
+              E-Mail : info@quinkpost.com
+            </p>
             <p style={{ fontWeight: "bold", marginLeft: "8px" }}>
               Address : Bhopal Smart City Development Corporation Ltd,
               Govindpura

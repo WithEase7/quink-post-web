@@ -22,6 +22,7 @@ import DownloadApp from "./Components/downloadapp";
 import OriginalsDetial from "./Components/originalsDetail";
 import AdminPostsUpload from "./Components/AdminPostsUpload"
 import HelmetBase from "./Components/HelmetBase";
+import ForgotPossword from "./Components/forgotpassword";
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
                 <Redirect push to={"/Flipbook/flipbook.html"} />
               </Route>{" "}
               <Route exact path="/originals" component={OriginalPage} />
+              <Route exact path="/forgotPassword" component={ForgotPossword} />
               <Route exact path="/messaging" component={Chatpage} />
               <Route exact path="/community" component={Communitypage} />
               <Route exact path="/addpost" component={Addpost} />
