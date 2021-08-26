@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap");
+
+.originals-page {
+  /* height: 99vh; */
+  background-color: #FFF;
+  width: 100vw;
+}
+.originals-menu {
+  width: 20vw;
+  height: 100%;
+  border-right: 2px solid rgb(0, 0, 0);
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.menu-1 {
+  margin: 19px 0px;
+  width: 99%;
+  height: 26%;
+  margin-bottom: 64px;
+}
+
+.originals-menu-btn {
+  width: 96%;
+  text-align: center;
+  padding: 15px 1px;
+  margin: 6px 2%;
+  font-family: "Rubik", sans-serif;
+  font-size: 26px;
+  font-weight: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-original-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  /* height: 30%; */
+  padding: 12px 0px;
+  border-radius: 13px;
+  width: 76%;
+  margin: 2px auto;
+  margin-bottom: 32px;
+  color: black;
+  font-family: "Rubik", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+}
+.homemainlink {
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+.original-home-icon {
+  margin-right: 9px;
+  margin-left: -2px;
+}
+.original-menu-active {
+  border-bottom: none;
+  border-radius: 16px;
+  background-color: #0094f61f;
+  color: #0095f6;
+}
+.originals-menu-btn:hover {
+  border-bottom: none;
+  border-radius: 16px;
+  background-color: #0094f61f;
+  color: #0095f6;
+}
+.home-original-button:hover {
+  background-color: rgb(228, 228, 228);
+}
+.menu-2 {
+  margin: 24px 0px;
+  width: 78%;
+  /* border: 2px solid red; */
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #0094f61f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.trend-1-original {
+  cursor: pointer;
+  width: 87%;
+  /* border: 0.3px solid rgb(105, 105, 105); */
+  border-radius: 19px;
+  margin: 8px 4px;
+  /* font-family: "Josefin Sans", sans-serif; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0px;
+  text-align: left;
+  transition: all 0.45sec ease-in-out;
+  background-color: #0094f63f;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+.trend-1-original:hover {
+  border: 1px solid black;
+}
+.trend-icons-originals {
+  margin-right: 6px;
+}
+.Originals-feed {
+  z-index: 2;
+  /* border: 2px solid red; */
+  height: 100%;
+  width: 74.5vw;
+  position: absolute;
+  top: 0px;
+  left: 20.2vw;
+}
+@media screen and (min-width: 1565px) {
+}
+@media screen and (max-width: 1455px) {
+  .originals-menu {
+    display: none;
+  }
+  .Originals-feed {
+    width: 96vw;
+    position: absolute;
+    left: 1vw;
+  }
+}
+@media screen and (max-width: 555px) {
+  .originals-menu {
+    width: 100vw;
+    height: 15%;
+    border-right: none;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .home-mobile-responsive {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+    box-sizing: border-box;
+    padding: 5px;
+    padding-right: 18px;
+  }
+  .home-text {
+    display: none;
+  }
+  .home-original-button {
+    border: none;
+    width: 20%;
+    padding: 0px;
+    margin: 0px;
+  }
+  .original-home-icon {
+    margin: 0px;
+    margin-left: -6px;
+  }
+  .menu-1 {
+    margin: 0px;
+    width: 99%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid red; */
+    height: 15%;
+  }
+  .original-menu-btn-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .originals-menu-btn {
+    width: 46%;
+    height: 20%;
+    text-align: center;
+    padding: 12px 1px;
+    margin: 6px 2%;
+    font-family: "Rubik", sans-serif;
+    font-size: 21px;
+    font-weight: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid red; */
+  }
+  .menu-2 {
+    display: none;
+  }
+  .Originals-feed {
+    z-index: 2;
+    /* border: 2px solid red; */
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    top: 15vh;
+    left: 0vw;
+  }
+}

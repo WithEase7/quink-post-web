@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overpass&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap");
+
+.original-description-container {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow-y: scroll;
+}
+.original-description-nav {
+  height: 8.3%;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(128, 128, 128, 0.422);
+  /* border: 2px solid red; */
+  margin: 6px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+}
+.original-description-nav-brand {
+  font-family: "Cabin", sans-serif;
+  padding: 12px 32px;
+  font-size: 34px;
+}
+.original-description-nav-original {
+  font-family: "Dancing Script", cursive;
+}
+.original-description-nav-back {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 9px 42px; /* change this fo rressponsive*/
+  border: 1px solid rgb(46, 46, 46);
+  border-radius: 12px;
+  background-color: rgba(235, 233, 233, 0.555);
+  padding: 10px 24px;
+}
+.original-description-cover {
+  /* border: 2px solid red; */
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+.original-description-cover-1 {
+  width: 35%;
+  height: auto;
+  /* border: 1px solid black; */
+  margin: 8px;
+  padding: 2px;
+}
+.original-description-cover-1 > img {
+  max-width: 100%;
+  max-height: auto;
+}
+.original-description-cover-2 {
+  width: 60%;
+  margin: 8px;
+  /* border: 2px solid red; */
+  font-size: 40px;
+  padding: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Overpass", sans-serif;
+}
+.original-description-article {
+  /* border: 2px solid red; */
+  padding: 34px;
+  font-size: 21px;
+  font-family: "Noto Sans TC", sans-serif;
+}
