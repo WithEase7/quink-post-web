@@ -336,7 +336,9 @@ function PostChallenge(props) {
               onChange={(value) => setniche(value.target.value)}
             >
               <option value="Select">Select</option>
-              <option value="Technology">Technology</option>
+              <option value="Technology">Technology</option>]
+
+              
               <option value="Sports">Sports</option>
               <option value="Business">Business</option>
               <option value="Health">Health</option>
