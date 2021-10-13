@@ -26,8 +26,8 @@ function PostChallenge(props) {
   const [imageData, setimageData] = useState({});
   const [selectedValue, setselectedValue] = useState("SELECT");
   const [showLoader, setshowLoader] = useState(false);
-  const [lang, setLang] = useState("Select")
-  const [niche, setniche] = useState("Select")
+  const [lang, setLang] = useState("Select");
+  const [niche, setniche] = useState("Select");
 
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
@@ -38,7 +38,7 @@ function PostChallenge(props) {
     convertContentToHTML();
   };
 
-  const history = useHistory()
+  const history = useHistory();
 
   const convertContentToHTML = () => {
     // {draftToHtml(convertToRaw(editorState.getCurrentContent()))}
@@ -202,73 +202,72 @@ function PostChallenge(props) {
   };
   console.log(selectedValue, "<<<<");
   const submitArticle = async (e) => {
-    console.log(articleData.caption.length, "<<<<<<<<this is length")
+    console.log(articleData.caption.length, "<<<<<<<<this is length");
     try {
       setshowLoader(true);
       e.preventDefault();
       if (selectedValue == "Select") {
-        alert("Select label for content")
-        setshowLoader(false)
-        return
+        alert("Select label for content");
+        setshowLoader(false);
+        return;
       }
       if (lang == "Select") {
-        alert("Select language")
-        setshowLoader(false)
-        return
+        alert("Select language");
+        setshowLoader(false);
+        return;
       }
 
       if (!articleData.title) {
-        alert("Enter Title")
-        setshowLoader(false)
-        return
+        alert("Enter Title");
+        setshowLoader(false);
+        return;
       }
-      console.log(articleData.caption.length, "<<<<<<<<this is length")
+      console.log(articleData.caption.length, "<<<<<<<<this is length");
       if (articleData.caption.length > 150) {
-        alert("caption should be less than 150 words")
-        setshowLoader(false)
-        return
+        alert("caption should be less than 150 words");
+        setshowLoader(false);
+        return;
       }
 
-      
-      if (!convertedContent && selectedValue!="MEME") {
-        alert("Enter body of content")
-        setshowLoader(false)
-        return
+      if (!convertedContent && selectedValue != "MEME") {
+        alert("Enter body of content");
+        setshowLoader(false);
+        return;
       }
-      const uploadData=selectedValue!="MEME"? {
-        author: globalState.user._id,
-        title: articleData.title,
-        body: convertedContent,
-        lang: lang,
-        niche: "Sports",
-        type: selectedValue,
-        caption: articleData.caption,
-        image: articleImage,
-      }:{
-        author: globalState.user._id,
-        title: articleData.title,
-        
-        lang: lang,
-        niche: niche,
-        type: selectedValue,
-        caption: articleData.caption,
-        image: articleImage,
-      }
+      const uploadData =
+        selectedValue != "MEME"
+          ? {
+              author: globalState.user._id,
+              title: articleData.title,
+              body: convertedContent,
+              lang: lang,
+              niche: "Sports",
+              type: selectedValue,
+              caption: articleData.caption,
+              image: articleImage,
+            }
+          : {
+              author: globalState.user._id,
+              title: articleData.title,
 
-
+              lang: lang,
+              niche: niche,
+              type: selectedValue,
+              caption: articleData.caption,
+              image: articleImage,
+            };
 
       // console.log(articleData, "{{{{{{{{{{{{{{{{{{{");
       // console.log({ title, description })
-   
 
-      const result = await axios.post(`${BACKEND}/post/upload`,uploadData);
+      const result = await axios.post(`${BACKEND}/post/upload`, uploadData);
       if (result.data.success) {
         // console.log(result.data, "<<<<{{{");
         console.log("success");
         setConvertedContent(null);
         setarticleData({ title: "", caption: "" });
         setshowLoader(false);
-        history.push("/")
+        history.push("/");
       } else {
         setshowLoader(false);
         alert("something went wrong");
@@ -319,6 +318,10 @@ function PostChallenge(props) {
               <option value="Select">Select</option>
               <option value="English">English</option>
               <option value="Hindi">Hindi</option>
+              <option value="Gujarati">Gujarati</option>
+              <option value="Kannada">Kannada</option>
+              <option value="Telugu">Telugu</option>
+              <option value="Marathi">Marathi</option>
             </select>
           </div>
 
@@ -423,32 +426,34 @@ function PostChallenge(props) {
             }
           })()} */}
           {/* <TextEditorpost /> */}
-          {selectedValue != "MEME" ? (<>
-            <label htmlFor="body" style={{ marginBottom: "10px" }}>
-              Body:
-            </label>
-            <div className="App">
-              {/* <header className="App-header">Rich Text Editor Example</header> */}
-              <Editor
-                editorState={editorState}
-                onEditorStateChange={handleEditorChange}
-                wrapperClassName="wrapper-class"
-                editorClassName="editor-class"
-                toolbarClassName="toolbar-class"
-                toolbar={{
-                  image: {
-                    uploadCallback: uploadImageCallBack,
-                    alt: { present: true, mandatory: false },
-                  },
-                }}
-              />
-              {/* <div
+          {selectedValue != "MEME" ? (
+            <>
+              <label htmlFor="body" style={{ marginBottom: "10px" }}>
+                Body:
+              </label>
+              <div className="App">
+                {/* <header className="App-header">Rich Text Editor Example</header> */}
+                <Editor
+                  editorState={editorState}
+                  onEditorStateChange={handleEditorChange}
+                  wrapperClassName="wrapper-class"
+                  editorClassName="editor-class"
+                  toolbarClassName="toolbar-class"
+                  toolbar={{
+                    image: {
+                      uploadCallback: uploadImageCallBack,
+                      alt: { present: true, mandatory: false },
+                    },
+                  }}
+                />
+                {/* <div
               className="preview"
               dangerouslySetInnerHTML={createMarkup(convertedContent)}
             >
             </div> */}
-            </div>
-          </>) :null}
+              </div>
+            </>
+          ) : null}
 
           <div style={{ alignItems: "center", textAlign: "center" }}>
             <Loader

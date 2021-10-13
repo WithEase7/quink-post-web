@@ -472,6 +472,10 @@ function Primaryfeed() {
                 English
               </MenuItem>
               <MenuItem onClick={() => handleClose("Hindi")}>Hindi</MenuItem>
+              <MenuItem onClick={() => handleClose("Gujarati")}>Gujarati</MenuItem>
+            <MenuItem onClick={() => handleClose("Kannada")}>Kannada</MenuItem>
+            <MenuItem onClick={() => handleClose("Marathi")}>Marathi</MenuItem>
+            <MenuItem onClick={() => handleClose("Telugu")}>Telugu</MenuItem>
             </Menu>
           </div>
           <div className="icon">
