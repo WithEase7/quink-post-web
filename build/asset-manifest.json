@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.03d3637c.chunk.css",
+    "main.js": "/static/js/main.1c736562.chunk.js",
+    "runtime-main.js": "/static/js/runtime-main.286741b7.js",
+    "static/css/2.708559a1.chunk.css": "/static/css/2.708559a1.chunk.css",
+    "static/js/2.d61e42e5.chunk.js": "/static/js/2.d61e42e5.chunk.js",
+    "static/js/3.a67c197a.chunk.js": "/static/js/3.a67c197a.chunk.js",
+    "index.html": "/index.html",
+    "precache-manifest.e8c509b3593d06b23c90a2a38f91651e.js": "/precache-manifest.e8c509b3593d06b23c90a2a38f91651e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/js/2.d61e42e5.chunk.js.LICENSE.txt": "/static/js/2.d61e42e5.chunk.js.LICENSE.txt",
+    "static/media/Poster7.png": "/static/media/Poster7.b0c9294c.png",
+    "static/media/Quinkpost.jpg": "/static/media/Quinkpost.157757f7.jpg",
+    "static/media/Aboutpage.css": "/static/media/subscribe-bg.01771fd4.png",
+    "static/media/about-img.png": "/static/media/about-img.0dceebd5.png",
+    "static/media/blurred.png": "/static/media/blurred.23b6b847.png",
+    "static/media/colour.jpg": "/static/media/colour.dc9e28e0.jpg",
+    "static/media/contact-img.png": "/static/media/contact-img.e77a1110.png",
+    "static/media/home-img.png": "/static/media/home-img.a088f289.png",
+    "static/media/pic1.png": "/static/media/pic1.b8a01b78.png",
+    "static/media/pic2.png": "/static/media/pic2.c877ef66.png",
+    "static/media/pic3.png": "/static/media/pic3.4584159c.png",
+    "static/media/profile.jpg": "/static/media/profile.4ddd9be3.jpg",
+    "static/media/slick-theme.css": "/static/media/slick.f97e3bbf.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.286741b7.js",
+    "static/css/2.708559a1.chunk.css",
+    "static/js/2.d61e42e5.chunk.js",
+    "static/css/main.03d3637c.chunk.css",
+    "static/js/main.1c736562.chunk.js"
+  ]
+}

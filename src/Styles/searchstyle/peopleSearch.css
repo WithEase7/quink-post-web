@@ -1,0 +1,51 @@
+.peopleSearch-Container {
+  border-bottom: 1px solid rgb(129, 129, 129);
+  height: 57px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px;
+  padding-left: 15px;
+}
+.peopleSearch-Profileimg {
+  height: 100%;
+  /* border: 2px solid red; */
+  width: 57px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
+.peopleSearch-Profileinfo {
+  /* border: 2px solid green; */
+  height: 100%;
+  width: 600px;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3px;
+}
+.peopleSearch-displayname {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 4px;
+  padding-bottom: 5px;
+}
+.peopleSearch-username {
+  font-family: "Nunito", sans-serif;
+  color: grey;
+  padding-left: 4px;
+}
+@media screen and (max-width: 500px) {
+  .peopleSearch-Profileinfo {
+    /* border: 2px solid green; */
+    height: 100%;
+    width: 300px;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 3px;
+  }
+}
