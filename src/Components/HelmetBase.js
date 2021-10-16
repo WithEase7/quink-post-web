@@ -44,7 +44,7 @@ const HelmetBase = ({
         <title>{title}</title>
         <link rel="canonical" href={`https://www.quinkpost.com${link}`} />
         <meta name="description" content={description ? description : title} />
-        {console.log(keywords?.join(), "<<<<<<key")}
+        {/* {console.log(keywords?.join(), "<<<<<<key")} */}
         <meta name="keywords" content={keywords?.join()} />
         <script className="structured-data-list" type="application/ld+json">
           {structuredJSON}
