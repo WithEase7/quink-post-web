@@ -26,6 +26,7 @@ import EditPostScreen from "./Components/EditPostScreen";
 import AboutPage from "./Components/About";
 import AddTags from "./Components/AddTags";
 import PageNotFound from "./Components/PageNotFound";
+import { Redirect } from 'react-router';
 // import Nichepage from "./Components/NichePage";
 // const AddTags from "./Components/AddTags"))
 
@@ -57,8 +58,8 @@ function App() {
               <Switch>
                 <Route exact path="/" component={Homepage} />
                 <Route exact path="/magz1" component={AccountSetting} />
-         
-                  {/* <Redirect push to={"/Flipbook/flipbook.html"} />
+
+                {/* <Redirect push to={"/Flipbook/flipbook.html"} />
                 </Route> */}
                 <Route exact path="/originals" component={OriginalPage} />
                 <Route
@@ -82,30 +83,48 @@ function App() {
                 <Route exact path="/about" component={AboutPage} />
                 <Route exact path="/mobile-menu" component={Mobilemenu} />
                 <Route exact path="/downloadApp" component={DownloadApp} />
-                <Route exact path="/blog/:niche" component={Homepage}/>
+                <Route exact path="/blog/:niche" component={Homepage} />
                 {/* <Route exact path="/:niche/feed" component={Nichepage} /> */}
-                <Route
+                {/* <Route
                   exact
                   path="/post/:title/:postId"
                   component={Postdetail}
-                />
-                <Route
+                /> */}
+                {/* <Route
                   exact
                   path="/post/:userName/:title/:postId"
                   component={Postdetail}
+                /> */}
+
+                {/* <Route exact path="/post/:title/:postId"> */}
+                <Redirect from="/post/:title/:postId" to="/:title/:postId" />
+                {/* </Route> */}
+                {/* <Route exact path="/post/:userName/:title/:postId"> */}
+                <Redirect
+                  from="/post/:userName/:title/:postId"
+                  to="/:title/:postId"
                 />
+                <Redirect
+                  from="/user/:userName/:title/:postId"
+                  to="/:title/:postId"
+                />
+                {/* </Route> */}
+                {/* <Route exact path="/post/:userName/:title/:postId">
+                  <Redirect to="/:title/:postId" /> 
+                </Route> */}
 
                 {/* <Route
                   exact
                   path="/:userName/:title/:postId"
                   component={Postdetail}
                 /> */}
+                <Route exact path="/:title/:postId" component={Postdetail} />
 
-                <Route
+                {/* <Route
                   exact
                   path="/user/:userName/:title/:postId"
                   component={Postdetail}
-                />
+                /> */}
                 <Route
                   exact
                   path="/Community/:communityName/:communityId"
@@ -114,7 +133,7 @@ function App() {
                 <Route exact path="/questiondes" component={Questiondes} />
                 <Route
                   exact
-                  path="/:userName/:OtherProfileId"
+                  path="/user/:userName/:OtherProfileId"
                   component={ProfileOther}
                 />
                 <Route

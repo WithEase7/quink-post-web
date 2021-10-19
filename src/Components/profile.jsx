@@ -363,7 +363,8 @@ function Profile() {
               // >
               <a
                 // href={`/post/${post?.title.replace(/ /g, "-")}/${post?._id}`}
-                href={`/post/${loggedInUser?.userName}/${post?.title.replace(/ /g, "-")}/${post?._id}`}
+                // href={`/post/${loggedInUser?.userName}/${post?.title.replace(/ /g, "-")}/${post?._id}`}
+                href={`/${post?.title.replace(/ /g, "-")}/${post?._id}`}
               >
                 <div className="individual-post-profile" key={index}>
                   <img

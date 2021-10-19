@@ -38,7 +38,7 @@ export default function SharePostCard(props) {
             <div className="chat__item__content">
 
                 {/* <Link to={`/post/${props.title.replace(/ /g, "-")}/${props.postId}`}> */}
-                <Link to={`/post/${props?.author?.userName}/${props.title.replace(/ /g, "-")}/${props.postId}`}>
+                <Link to={`/${props.title.replace(/ /g, "-")}/${props.postId}`}>
 
                     <div style={{color: "#fff"}}>{props.title}</div>
                     <div style={{ textAlign: "center" }}><img style={{ width: "75%", marginTop: "10px" }} src={props.image ? props.image : Quinkpost} /></div>

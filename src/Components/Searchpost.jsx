@@ -43,7 +43,8 @@ const SearchPost = ({ search }) => {
           <div  >
             {/* <Link to="/postDetails"> <img src={post.image} alt=""  /></Link> */}
             <Link to={{
-              pathname: `/post/${post?.author?.userName}/${post.title.replace(/ /g,"-")}/${post._id}`,
+              // pathname: `/post/${post?.author?.userName}/${post.title.replace(/ /g,"-")}/${post._id}`,
+              pathname: `/${post.title.replace(/ /g,"-")}/${post._id}`,
               state: { post, user: globalState }
             }} className="image" ><img src={post.image} alt="" /></Link>
           </div>

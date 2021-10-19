@@ -94,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
   playIcon: {
     height: 38,
     width: 38,
-  }
+  },
 }));
 
 function Postdetail(props) {
@@ -125,8 +125,8 @@ function Postdetail(props) {
     (async () => {
       try {
         const getPostData = await axios.get(`${BACKEND}/post/open/${postId}`);
-        if(!getPostData?.data?.success){
-          history.push("/")
+        if (!getPostData?.data?.success) {
+          history.push("/");
         }
         // const getPostData = await axios.get(`${BACKEND}/post/open/${postId}`);
         const postBody = getPostData.data.post.body;
@@ -274,10 +274,17 @@ function Postdetail(props) {
         {/* <HelmetBase title={`${postData?.title}`} link={`/user/${postData?.author?.userName}/${postData?.title}/${postData?.author?._id}`} /> */}
         <div className="contact-individual-1">
           <div className="contact-profile">
-            <Avatar src={get2User.avatar} className="contact-profile-avatar" alt={get2User?.userName} />
+            <Avatar
+              src={get2User.avatar}
+              className="contact-profile-avatar"
+              alt={get2User?.userName}
+            />
           </div>
           <div className="contact-individual-container">
-            <div className="contact-individual-name"> {get2User?.userName} </div>
+            <div className="contact-individual-name">
+              {" "}
+              {get2User?.userName}{" "}
+            </div>
             {/* <div className="contact-individual-message">{contact.mssg}</div> */}
           </div>
         </div>
@@ -335,7 +342,7 @@ function Postdetail(props) {
     }
     setforwardmodalIsOpen(!forwardmodalIsOpen);
   };
-  let Commentbody
+  let Commentbody;
   const settings = {
     dots: true,
     fade: true,
@@ -565,9 +572,9 @@ function Postdetail(props) {
       <div
         className={
           postData?.type != "MEME" &&
-            postData?.type != "ART" &&
-            postData?.type != "SHAYARI" &&
-            postData?.type != "QUOTE"
+          postData?.type != "ART" &&
+          postData?.type != "SHAYARI" &&
+          postData?.type != "QUOTE"
             ? "postdetail-main-compo"
             : "postdetail-main-compo-meme"
         }
@@ -576,15 +583,15 @@ function Postdetail(props) {
           <div className="postdetail-profile">
             <div className="profile-info">
               <div className="profile-img">
-                <Link to={`/${author?.userName}/${author?._id}`}>
-                {/* <Link to={`/user/${author?.userName}/${author?._id}`}> */}
+                <Link to={`/user/${author?.userName}/${author?._id}`}>
+                  {/* <Link to={`/user/${author?.userName}/${author?._id}`}> */}
                   <Avatar src={author?.avatar} className="profile-avatar" />
                 </Link>
               </div>
               <div style={{ alignSelf: "center" }} className="profile-names">
                 <div className="profile-displayname">
                   <Link
-                    to={`/${author?.userName}/${author?._id}`}
+                    to={`/user/${author?.userName}/${author?._id}`}
                     // to={`/user/${author?.userName}/${author?._id}`}
                     style={{ textDecoration: "none", color: "inherit" }}
                   >
@@ -619,8 +626,14 @@ function Postdetail(props) {
               <h1 className="postdetail-container-upper-info-1">
                 {postData?.title}
               </h1>
-              <div className="postdetail-container-upper-info-2" style={{ alignSelf: "center" }}>
-                <IconButton className="swipeButtons__like" onClick={LikeThisPost}>
+              <div
+                className="postdetail-container-upper-info-2"
+                style={{ alignSelf: "center" }}
+              >
+                <IconButton
+                  className="swipeButtons__like"
+                  onClick={LikeThisPost}
+                >
                   <FavoriteBorderOutlinedIcon fontSize="large" />
                   <span className="no-span">{totalLikedPost}</span>
                 </IconButton>
@@ -670,25 +683,24 @@ function Postdetail(props) {
             </div>
           </div>
           {(() => {
-            if (cmmnt == true) return Commentbody
+            if (cmmnt == true) return Commentbody;
             else {
-              return <div
-                style={{ height: "auto", overflow: "scroll" }}
-                // className="postdetail-container-body"
-                className={
-                  postData?.type != "MEME" && postData?.type != "ART"
-                    ? "postdetail-container-body"
-                    : "postdetail-container-body-meme"
-                }
-                dangerouslySetInnerHTML={createMarkup(
-                  postData?.body?.trim()
-                    ? postData?.body
-                    : postData?.caption
-                )}
-              ></div>
+              return (
+                <div
+                  style={{ height: "auto", overflow: "scroll" }}
+                  // className="postdetail-container-body"
+                  className={
+                    postData?.type != "MEME" && postData?.type != "ART"
+                      ? "postdetail-container-body"
+                      : "postdetail-container-body-meme"
+                  }
+                  dangerouslySetInnerHTML={createMarkup(
+                    postData?.body?.trim() ? postData?.body : postData?.caption
+                  )}
+                ></div>
+              );
             }
           })()}
-
         </div>
         <div className="suggestion-postdetail">
           <h3 className="recommend-text-postdetail">Recommended Quinks</h3>
@@ -708,7 +720,7 @@ function Postdetail(props) {
                           >
                             <a
                               // href={`/post/${sugg?._doc?.title}/${sugg?._doc?._id}`}
-                              href={`/post/${sugg?._doc?.author?.userName}/${sugg?._doc?.title}/${sugg?._doc?._id}`}
+                              href={`/${sugg?._doc?.title}/${sugg?._doc?._id}`}
                               style={{
                                 textDecoration: "underline",
                                 color: "inherit",
@@ -722,14 +734,15 @@ function Postdetail(props) {
                             color="textSecondary"
                             style={{ alignSelf: "end" }}
                           >
-                           
-                              {sugg?._doc?.author?.userName}
+                            {sugg?._doc?.author?.userName}
                           </Typography>
                         </CardContent>
                       </div>
                       <CardMedia
                         className={classes.cover}
-                        image={sugg?._doc?.image ? sugg?._doc?.image : Quinkpost}
+                        image={
+                          sugg?._doc?.image ? sugg?._doc?.image : Quinkpost
+                        }
                         title={sugg?._doc?.title}
                       />
                     </Card>
@@ -760,25 +773,26 @@ function Postdetail(props) {
     );
   }
 
-
   // console.log(author?.userName, "userName")
   return (
     <div>
       <HelmetBase
         title={`${postData?.title}`}
         // link={`/post/${postData?.title}/${postData?.author?._id}`}
-        link={`/post/${postData?.author?.userName}/${postData?.title}/${postData?.author?._id}`}
+        // link={`/post/${postData?.author?.userName}/${postData?.title}/${postData?.author?._id}`}
+        link={`/${postData?.title}/${postData?.author?._id}`}
         description={postData?.caption}
         keywords={postData?.tags}
         structuredJSON={postData?.seo}
         usernameSchema={author?.userName}
         imageSchema={postData?.image}
-        authorSchema={`https://www.quinkpost.com/${author?.userName}/${author?._id}`}
+        // authorSchema={`https://www.quinkpost.com/${author?.userName}/${author?._id}`}
+        authorSchema={`https://www.quinkpost.com/user/${author?.userName}/${author?._id}`}
       />
 
       <div
         className="profile-container-upper"
-      // style={{ backgroundColor: "lightgrey" }}
+        // style={{ backgroundColor: "lightgrey" }}
       >
         <div
           className="profile-container-upper-homeicon"
@@ -793,7 +807,7 @@ function Postdetail(props) {
           <h2 className="showquink-detail">Quink Post</h2>
           <div className="showavatar-detail">
             <Link
-              to={`/${author?.userName}/${author?._id}`}
+              to={`/user/${author?.userName}/${author?._id}`}
               // to={`/user/${author?.userName}/${author?._id}`}
               style={{ textdecoration: "none", color: "inherit" }}
             >
@@ -809,7 +823,7 @@ function Postdetail(props) {
             >
               <Link
                 // to={`/user/${author?.userName}/${author?._id}`}
-                to={`/${author?.userName}/${author?._id}`}
+                to={`/user/${author?.userName}/${author?._id}`}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
                 {author?.userName}

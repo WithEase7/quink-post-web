@@ -89,20 +89,22 @@ const Post = ({ dataToShow }) => {
         return (
           <div>
             <a
+              href={`/${post.title.replace(/ /g, "-")}/${post._id}`}
+              className="image"
+            >
+              {/* <a
               href={`/post/${post?.author?.userName}/${post.title.replace(
                 / /g,
                 "-"
               )}/${post._id}`}
               className="image"
-            >
+            > */}
               <img src={post.image} alt={post?.title} />
             </a>
           </div>
         );
       } else {
-        return(
-          <></>
-        );
+        return <></>;
       }
     };
 
@@ -111,7 +113,7 @@ const Post = ({ dataToShow }) => {
         <div className="post-container">
           <div className="profile-1">
             {/* <a href={`/user/${post?.author?.userName}/${post?.author?._id}`}> */}
-            <a href={`/${post?.author?.userName}/${post?.author?._id}`}>
+            <a href={`/user/${post?.author?.userName}/${post?.author?._id}`}>
               <Avatar
                 alt={post?.author?.userName}
                 src={post?.author?.avatar ? post?.author?.avatar : defaultUrl}
@@ -154,10 +156,10 @@ const Post = ({ dataToShow }) => {
               {post?.author?.userName == "Quink Post Admin"
                 ? "Admin"
                 : post?.author?.post?.length < 5
-                  ? "Amatuer"
-                  : post?.author?.post?.length < 20
-                    ? "Creative"
-                    : "Master"}
+                ? "Amatuer"
+                : post?.author?.post?.length < 20
+                ? "Creative"
+                : "Master"}
             </div>
           </div>
           {imagePresent()}
@@ -175,7 +177,8 @@ const Post = ({ dataToShow }) => {
             <a
               style={{ textDecoration: "none", color: "#282c37" }}
               // href={`/post/${post?.title.replace(/ /g,"-")}/${post?._id}`}
-              href={`/post/${post?.author?.userName}/${post?.title.replace(/ /g,"-")}/${post?._id}`}
+              // href={`/post/${post?.author?.userName}/${post?.title.replace(/ /g,"-")}/${post?._id}`}
+              href={`/${post?.title.replace(/ /g, "-")}/${post?._id}`}
             >
               Read
             </a>

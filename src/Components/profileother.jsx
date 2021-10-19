@@ -334,7 +334,7 @@ function ProfileOther(props) {
             // console.log(post);
             return (
               // <a href={`/post/${post.title.replace(/ /g,"-")}/${post._id}`}>
-              <a href={`/post/${User?.userName}/${post.title.replace(/ /g, "-")}/${post._id}`}>
+              <a href={`/${post.title.replace(/ /g, "-")}/${post._id}`}>
                 <div className="individual-post-profile" key={key}>
                   <img
                     src={post?.image ? post?.image : Quinkpost}
