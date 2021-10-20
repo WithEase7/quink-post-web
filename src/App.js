@@ -26,7 +26,7 @@ import EditPostScreen from "./Components/EditPostScreen";
 import AboutPage from "./Components/About";
 import AddTags from "./Components/AddTags";
 import PageNotFound from "./Components/PageNotFound";
-import { Redirect } from 'react-router';
+import { Redirect } from "react-router";
 // import Nichepage from "./Components/NichePage";
 // const AddTags from "./Components/AddTags"))
 
@@ -90,41 +90,41 @@ function App() {
                   path="/post/:title/:postId"
                   component={Postdetail}
                 /> */}
-                {/* <Route
+                <Route
                   exact
                   path="/post/:userName/:title/:postId"
                   component={Postdetail}
-                /> */}
+                />
 
                 {/* <Route exact path="/post/:title/:postId"> */}
-                <Redirect from="/post/:title/:postId" to="/:title/:postId" />
+                {/* <Redirect from="/post/:title/:postId" to="/:title/:postId" /> */}
                 {/* </Route> */}
-                {/* <Route exact path="/post/:userName/:title/:postId"> */}
-                <Redirect
+                {/* <Route exact path="/post/:userName/:title/:postId"/> */}
+                {/* <Redirect
                   from="/post/:userName/:title/:postId"
                   to="/:title/:postId"
-                />
-                <Redirect
+                /> */}
+                {/* <Redirect
                   from="/user/:userName/:title/:postId"
                   to="/:title/:postId"
-                />
+                /> */}
                 {/* </Route> */}
                 {/* <Route exact path="/post/:userName/:title/:postId">
                   <Redirect to="/:title/:postId" /> 
                 </Route> */}
 
-                {/* <Route
+                <Route
                   exact
                   path="/:userName/:title/:postId"
                   component={Postdetail}
-                /> */}
+                />
                 <Route exact path="/:title/:postId" component={Postdetail} />
 
-                {/* <Route
+                <Route
                   exact
                   path="/user/:userName/:title/:postId"
                   component={Postdetail}
-                /> */}
+                />
                 <Route
                   exact
                   path="/Community/:communityName/:communityId"
