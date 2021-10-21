@@ -101,7 +101,7 @@ function App() {
                   path="/post/:title/:postId"
                   render={(props) => (
                     <Redirect
-                      to={`/${props.match.params.postId}/${props.match.params.postId}`}
+                      to={`/${props.match.params.title}/${props.match.params.postId}`}
                     />
                   )}
                 />
@@ -129,7 +129,7 @@ function App() {
                   render={(props) => (
                     // const {title,postId}=props.match.params
                     <Redirect
-                      to={`/${props.match.paramstitle}/${props.match.params.postId}`}
+                      to={`/${props.match.params.title}/${props.match.params.postId}`}
                     />
                   )}
                 />
