@@ -1,0 +1,297 @@
+.navbarcontainer {
+  width: 22vw;
+  height: 100vh;
+  /* border-right: 0.1vw solid black; */
+  /* background-color: #1b2838; */
+  /* background-color: rgb(211, 211, 211); */
+  background-color: #d3d9dbd5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-top: -22px; */
+  /* justify-content: center; */
+}
+
+.recommend-quink-mobile {
+  margin-bottom: 8px;
+  margin-top: 10px;
+  border-bottom: 1px groove;
+  background: #fff;
+  padding: 0px 10px;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 15px;
+}
+
+.brand {
+  /* border: 2px solid #c7d5e0; */
+  height: 27px;
+  margin: 12px;
+  margin-top: 16px;
+  margin-left: 0px;
+  padding: 7px 52px;
+  font-family: "Lato", sans-serif;
+  font-size: 28px;
+  /* color: #c7d5e0; */
+  color: #333333;
+  opacity: 1;
+  align-self: flex-start;
+}
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@900&display=swap");
+.original-btn {
+  font-size: 31px;
+  border: 1px solid rgba(43, 43, 43, 0.774);
+  border-radius: 16px;
+  margin: 14px;
+  margin-bottom: 28px;
+  padding: 17px 42px;
+  background-color: white;
+  font-family: "Nanum Gothic", sans-serif;
+
+  /* box-shadow: 1px 1px 6px rgba(50, 52, 53, 0.74); */
+}
+.original-link {
+  color: black;
+  text-decoration: none;
+  outline: none;
+}
+.original-btn:hover {
+  border: none;
+  background-color: #0094f61f;
+  border: 1px solid #0094f6;
+}
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+.mobile-navbtn-holder {
+  /* border: 2px solid red; */
+  width: 100%;
+  /* height: 60%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar-btn {
+  /* border: 2px solid red; */
+  width: 57%;
+  text-align: center;
+  padding: 15px 22px;
+  margin: 5px 0px;
+  font-family: "Rubik", sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: black;
+}
+.navbar-btn-div {
+  display: flex;
+  align-items: center;
+}
+.navbar-btn-active {
+  border-bottom: none;
+  border-radius: 16px;
+  background-color: #0094f61f;
+  color: #0095f6;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.navbar-btn:hover {
+  border-bottom: none;
+  border-radius: 16px;
+  background-color: #0094f61f;
+  color: #0095f6;
+}
+.navbar-btn-icon {
+  margin-right: 8px;
+}
+.mobile-icon {
+  display: none;
+}
+/* .logout-btn {
+  margin-top: 135px;
+  font-size: 18px;
+  border: 2px solid rgba(49, 49, 49, 0.603);
+  padding: 9px 27px;
+  border-radius: 6px;
+} */
+
+@media screen and (max-width: 1300px) {
+  .navbarcontainer {
+    width: 100vw;
+    height: 19vh;
+    position: fixed;
+  }
+  .brand {
+    height: 6vh;
+    margin: 2%;
+    margin-bottom: 0%;
+    padding: 3px 12px;
+    font-family: "Lato", sans-serif;
+    font-size: 22px;
+    color: #333333;
+    opacity: 1;
+    align-self: flex-start;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100vw;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.534);
+  }
+  .mobile-chat-icon-box {
+    position: absolute;
+    top: 9.8%;
+    right: 5%;
+    /* border: 2px solid red; */
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .abcd {
+    display: none;
+  }
+  .original-btn {
+    display: none;
+    margin-bottom: 0px;
+  }
+  .mobile-navbtn-holder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+  .navbar-btn {
+    /* border: 2px solid red; */
+    width: 6%;
+    text-align: center;
+    padding: 8px 22px;
+    padding-left: 8%;
+    /* padding-right: 4%; */
+    margin: 1% 0px;
+    font-family: "Rubik", sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+  }
+  .navbar-btn-active {
+    border-bottom: none;
+    border-radius: 16px;
+    background-color: transparent;
+    color: #0095f6;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .navbar-btn:hover {
+    border-bottom: none;
+    border-radius: 16px;
+    background-color: #0094f61f;
+    color: #0095f6;
+  }
+  .mobile-icon {
+    display: flex;
+  }
+  .notimodal {
+    background-color: white;
+    z-index: 2000;
+    height: 85vh;
+    position: absolute;
+    top: 15%;
+    left: 0%;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .chatpage-mobile-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+  }
+  .menuModal {
+    width: 80%;
+    /* height: 85%; */
+    margin: 33px auto;
+    background-color: white;
+    border: 3px groove;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    /* overflow-y: scroll; */
+    box-sizing: border-box;
+  }
+  .original-btn-modal {
+    font-size: 25px;
+    width: 70vw;
+    border: 1px solid rgba(43, 43, 43, 0.774);
+    border-radius: 16px;
+    margin: 12px;
+    margin-bottom: 14px;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-family: "Nanum Gothic", sans-serif;
+    box-sizing: border-box;
+  }
+  .addpost-mobile {
+    padding: 9px !important;
+  }
+  .trend-mobile {
+    /* width: 60% !important; */
+    margin-top: 12px !important;
+    text-align: center;
+  }
+  .menu-mobile-cross {
+    margin-top: 9px;
+  }
+  .mobile-chat-icon-box-icons {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .mobile-chat-icon-box {
+    right: 10%;
+  }
+}
+
+@media screen and (max-width: 650px) and (min-height: 420px) {
+  .navbarcontainer {
+    height: 15vh;
+  }
+}
+
+@media screen and (max-height: 420px) { 
+  .navbarcontainer {
+    height: 21vh;
+  }
+  }
+
+@media screen and (max-width: 320px) {
+  .brand {
+    height: 5vh;
+    margin: 2%;
+    margin-bottom: 0%;
+    padding: 2px 9px;
+    font-family: "Lato", sans-serif;
+    font-size: 19px;
+    color: #333333;
+    opacity: 1;
+    align-self: flex-start;
+    box-sizing: border-box;
+  }
+}

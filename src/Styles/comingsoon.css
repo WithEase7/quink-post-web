@@ -1,0 +1,36 @@
+.coming-soon {
+  width: 78vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 22vw;
+  /* border: 2px solid red; */
+  background: linear-gradient(#9eaec2, #3f4f61);
+  color: #f1f1f1;
+  padding: 12px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  font-size: 45px;
+  font-weight: 600;
+}
+@media screen and (max-width: 1300px) {
+  .coming-soon {
+    width: 100vw;
+    height: 85vh;
+    position: absolute;
+    text-align: center;
+    top: 15vh;
+    left: 0vw;
+    background-color: #3f4f61;
+    color: #f1f1f1;
+    padding: 12px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 600;
+  }
+}
