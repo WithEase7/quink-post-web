@@ -90,41 +90,67 @@ function App() {
                   path="/post/:title/:postId"
                   component={Postdetail}
                 /> */}
-                <Route
+                {/* <Route
                   exact
                   path="/post/:userName/:title/:postId"
                   component={Postdetail}
+                /> */}
+
+                <Route
+                  exact
+                  path="/post/:title/:postId"
+                  render={(props) => (
+                    <Redirect
+                      to={`/${props.match.params.postId}/${props.match.params.postId}`}
+                    />
+                  )}
                 />
 
-                {/* <Route exact path="/post/:title/:postId"> */}
-                {/* <Redirect from="/post/:title/:postId" to="/:title/:postId" /> */}
+                {/* <Redirect
+                  from={`/post/${title}/${postId}`}
+                  to={`/${title}/${postId}`}
+                /> */}
                 {/* </Route> */}
-                {/* <Route exact path="/post/:userName/:title/:postId"/> */}
+                <Route
+                  exact
+                  path={`/post/:userName/:title/:postId`}
+                  render={(props) => (
+                    <Redirect
+                      to={`/${props.match.params.title}/${props.match.params.postId}`}
+                    />
+                  )}
+                />
                 {/* <Redirect
                   from="/post/:userName/:title/:postId"
                   to="/:title/:postId"
                 /> */}
-                {/* <Redirect
-                  from="/user/:userName/:title/:postId"
-                  to="/:title/:postId"
-                /> */}
+                <Route
+                  path="/user/:userName/:title/:postId"
+                  render={(props) => (
+                    // const {title,postId}=props.match.params
+                    <Redirect
+                      to={`/${props.match.paramstitle}/${props.match.params.postId}`}
+                    />
+                  )}
+                />
+
                 {/* </Route> */}
                 {/* <Route exact path="/post/:userName/:title/:postId">
                   <Redirect to="/:title/:postId" /> 
                 </Route> */}
-
+                {/* 
                 <Route
                   exact
                   path="/:userName/:title/:postId"
                   component={Postdetail}
-                />
+                /> */}
                 <Route exact path="/:title/:postId" component={Postdetail} />
 
-                <Route
+                {/* <Route
                   exact
                   path="/user/:userName/:title/:postId"
                   component={Postdetail}
-                />
+                /> */}
                 <Route
                   exact
                   path="/Community/:communityName/:communityId"
